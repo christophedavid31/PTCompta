@@ -82,6 +82,7 @@ public class ShopSwitch<T> extends Switch<T> {
 			case ShopPackage.SALE: {
 				Sale sale = (Sale)theEObject;
 				T result = caseSale(sale);
+				if (result == null) result = caseValuable(sale);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -95,6 +96,56 @@ public class ShopSwitch<T> extends Switch<T> {
 			case ShopPackage.PERSON: {
 				Person person = (Person)theEObject;
 				T result = casePerson(person);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ShopPackage.PAYMENT: {
+				Payment payment = (Payment)theEObject;
+				T result = casePayment(payment);
+				if (result == null) result = caseValuable(payment);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ShopPackage.VALUABLE: {
+				Valuable valuable = (Valuable)theEObject;
+				T result = caseValuable(valuable);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ShopPackage.CHEQUE_PAYMENT: {
+				ChequePayment chequePayment = (ChequePayment)theEObject;
+				T result = caseChequePayment(chequePayment);
+				if (result == null) result = casePayment(chequePayment);
+				if (result == null) result = caseValuable(chequePayment);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ShopPackage.CASH_PAYMENT: {
+				CashPayment cashPayment = (CashPayment)theEObject;
+				T result = caseCashPayment(cashPayment);
+				if (result == null) result = casePayment(cashPayment);
+				if (result == null) result = caseValuable(cashPayment);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ShopPackage.ELECTRONIC_PAYMENT: {
+				ElectronicPayment electronicPayment = (ElectronicPayment)theEObject;
+				T result = caseElectronicPayment(electronicPayment);
+				if (result == null) result = casePayment(electronicPayment);
+				if (result == null) result = caseValuable(electronicPayment);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ShopPackage.BANK_OPERATION: {
+				BankOperation bankOperation = (BankOperation)theEObject;
+				T result = caseBankOperation(bankOperation);
+				if (result == null) result = caseValuable(bankOperation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ShopPackage.ACCOUNT_BOOK: {
+				AccountBook accountBook = (AccountBook)theEObject;
+				T result = caseAccountBook(accountBook);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -174,6 +225,111 @@ public class ShopSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePerson(Person object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Payment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Payment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePayment(Payment object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Valuable</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Valuable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseValuable(Valuable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Cheque Payment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Cheque Payment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseChequePayment(ChequePayment object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Cash Payment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Cash Payment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCashPayment(CashPayment object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Electronic Payment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Electronic Payment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseElectronicPayment(ElectronicPayment object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Bank Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Bank Operation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBankOperation(BankOperation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Account Book</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Account Book</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAccountBook(AccountBook object) {
 		return null;
 	}
 

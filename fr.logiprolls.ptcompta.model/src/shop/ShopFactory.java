@@ -58,6 +58,51 @@ public interface ShopFactory extends EFactory {
 	Employee createEmployee();
 
 	/**
+	 * Returns a new object of class '<em>Cheque Payment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Cheque Payment</em>'.
+	 * @generated
+	 */
+	ChequePayment createChequePayment();
+
+	/**
+	 * Returns a new object of class '<em>Cash Payment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Cash Payment</em>'.
+	 * @generated
+	 */
+	CashPayment createCashPayment();
+
+	/**
+	 * Returns a new object of class '<em>Electronic Payment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Electronic Payment</em>'.
+	 * @generated
+	 */
+	ElectronicPayment createElectronicPayment();
+
+	/**
+	 * Returns a new object of class '<em>Bank Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Bank Operation</em>'.
+	 * @generated
+	 */
+	BankOperation createBankOperation();
+
+	/**
+	 * Returns a new object of class '<em>Account Book</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Account Book</em>'.
+	 * @generated
+	 */
+	AccountBook createAccountBook();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

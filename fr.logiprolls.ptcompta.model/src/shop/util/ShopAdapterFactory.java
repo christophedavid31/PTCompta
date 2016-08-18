@@ -88,6 +88,34 @@ public class ShopAdapterFactory extends AdapterFactoryImpl {
 				return createPersonAdapter();
 			}
 			@Override
+			public Adapter casePayment(Payment object) {
+				return createPaymentAdapter();
+			}
+			@Override
+			public Adapter caseValuable(Valuable object) {
+				return createValuableAdapter();
+			}
+			@Override
+			public Adapter caseChequePayment(ChequePayment object) {
+				return createChequePaymentAdapter();
+			}
+			@Override
+			public Adapter caseCashPayment(CashPayment object) {
+				return createCashPaymentAdapter();
+			}
+			@Override
+			public Adapter caseElectronicPayment(ElectronicPayment object) {
+				return createElectronicPaymentAdapter();
+			}
+			@Override
+			public Adapter caseBankOperation(BankOperation object) {
+				return createBankOperationAdapter();
+			}
+			@Override
+			public Adapter caseAccountBook(AccountBook object) {
+				return createAccountBookAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -174,6 +202,104 @@ public class ShopAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPersonAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link shop.Payment <em>Payment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see shop.Payment
+	 * @generated
+	 */
+	public Adapter createPaymentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link shop.Valuable <em>Valuable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see shop.Valuable
+	 * @generated
+	 */
+	public Adapter createValuableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link shop.ChequePayment <em>Cheque Payment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see shop.ChequePayment
+	 * @generated
+	 */
+	public Adapter createChequePaymentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link shop.CashPayment <em>Cash Payment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see shop.CashPayment
+	 * @generated
+	 */
+	public Adapter createCashPaymentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link shop.ElectronicPayment <em>Electronic Payment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see shop.ElectronicPayment
+	 * @generated
+	 */
+	public Adapter createElectronicPaymentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link shop.BankOperation <em>Bank Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see shop.BankOperation
+	 * @generated
+	 */
+	public Adapter createBankOperationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link shop.AccountBook <em>Account Book</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see shop.AccountBook
+	 * @generated
+	 */
+	public Adapter createAccountBookAdapter() {
 		return null;
 	}
 

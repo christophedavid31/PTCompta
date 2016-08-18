@@ -4,6 +4,7 @@ package shop.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -11,11 +12,13 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import shop.AccountBook;
 import shop.Customer;
 import shop.Employee;
 import shop.Sale;
@@ -33,6 +36,7 @@ import shop.ShopPackage;
  *   <li>{@link shop.impl.ShopImpl#getCustomers <em>Customers</em>}</li>
  *   <li>{@link shop.impl.ShopImpl#getSales <em>Sales</em>}</li>
  *   <li>{@link shop.impl.ShopImpl#getEmployees <em>Employees</em>}</li>
+ *   <li>{@link shop.impl.ShopImpl#getAccountBook <em>Account Book</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,6 +71,16 @@ public class ShopImpl extends MinimalEObjectImpl.Container implements Shop {
 	 * @ordered
 	 */
 	protected EList<Employee> employees;
+
+	/**
+	 * The cached value of the '{@link #getAccountBook() <em>Account Book</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAccountBook()
+	 * @generated
+	 * @ordered
+	 */
+	protected AccountBook accountBook;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -128,6 +142,65 @@ public class ShopImpl extends MinimalEObjectImpl.Container implements Shop {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public AccountBook getAccountBook() {
+		return accountBook;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetAccountBook(AccountBook newAccountBook, NotificationChain msgs) {
+		AccountBook oldAccountBook = accountBook;
+		accountBook = newAccountBook;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ShopPackage.SHOP__ACCOUNT_BOOK, oldAccountBook, newAccountBook);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAccountBook(AccountBook newAccountBook) {
+		if (newAccountBook != accountBook) {
+			NotificationChain msgs = null;
+			if (accountBook != null)
+				msgs = ((InternalEObject)accountBook).eInverseRemove(this, ShopPackage.ACCOUNT_BOOK__SHOP, AccountBook.class, msgs);
+			if (newAccountBook != null)
+				msgs = ((InternalEObject)newAccountBook).eInverseAdd(this, ShopPackage.ACCOUNT_BOOK__SHOP, AccountBook.class, msgs);
+			msgs = basicSetAccountBook(newAccountBook, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShopPackage.SHOP__ACCOUNT_BOOK, newAccountBook, newAccountBook));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ShopPackage.SHOP__ACCOUNT_BOOK:
+				if (accountBook != null)
+					msgs = ((InternalEObject)accountBook).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ShopPackage.SHOP__ACCOUNT_BOOK, null, msgs);
+				return basicSetAccountBook((AccountBook)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -137,6 +210,8 @@ public class ShopImpl extends MinimalEObjectImpl.Container implements Shop {
 				return ((InternalEList<?>)getSales()).basicRemove(otherEnd, msgs);
 			case ShopPackage.SHOP__EMPLOYEES:
 				return ((InternalEList<?>)getEmployees()).basicRemove(otherEnd, msgs);
+			case ShopPackage.SHOP__ACCOUNT_BOOK:
+				return basicSetAccountBook(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -155,6 +230,8 @@ public class ShopImpl extends MinimalEObjectImpl.Container implements Shop {
 				return getSales();
 			case ShopPackage.SHOP__EMPLOYEES:
 				return getEmployees();
+			case ShopPackage.SHOP__ACCOUNT_BOOK:
+				return getAccountBook();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -180,6 +257,9 @@ public class ShopImpl extends MinimalEObjectImpl.Container implements Shop {
 				getEmployees().clear();
 				getEmployees().addAll((Collection<? extends Employee>)newValue);
 				return;
+			case ShopPackage.SHOP__ACCOUNT_BOOK:
+				setAccountBook((AccountBook)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -201,6 +281,9 @@ public class ShopImpl extends MinimalEObjectImpl.Container implements Shop {
 			case ShopPackage.SHOP__EMPLOYEES:
 				getEmployees().clear();
 				return;
+			case ShopPackage.SHOP__ACCOUNT_BOOK:
+				setAccountBook((AccountBook)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -219,6 +302,8 @@ public class ShopImpl extends MinimalEObjectImpl.Container implements Shop {
 				return sales != null && !sales.isEmpty();
 			case ShopPackage.SHOP__EMPLOYEES:
 				return employees != null && !employees.isEmpty();
+			case ShopPackage.SHOP__ACCOUNT_BOOK:
+				return accountBook != null;
 		}
 		return super.eIsSet(featureID);
 	}

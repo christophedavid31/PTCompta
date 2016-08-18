@@ -8,25 +8,72 @@
         eType="#//Sale" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="employees" upperBound="-1"
         eType="#//Employee" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="accountBook" lowerBound="1"
+        eType="#//AccountBook" containment="true" eOpposite="#//AccountBook/shop"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Customer" eSuperTypes="#//Person"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Sale">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="customer" lowerBound="1"
-        eType="#//Customer"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="employee" lowerBound="1"
-        eType="#//Employee"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Customer" eSuperTypes="#//Person">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sales" upperBound="-1"
+        eType="#//Sale" eOpposite="#//Sale/customer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="payments" upperBound="-1"
+        eType="#//Payment" eOpposite="#//Payment/customer"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Sale" eSuperTypes="#//Valuable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="paymentType" eType="#//PaymentType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="customer" lowerBound="1"
+        eType="#//Customer" eOpposite="#//Customer/sales"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="employees" lowerBound="1"
+        upperBound="-1" eType="#//Employee" eOpposite="#//Employee/sales"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="payments" upperBound="-1"
+        eType="#//Payment" eOpposite="#//Payment/sale"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Employee" eSuperTypes="#//Person"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Employee" eSuperTypes="#//Person">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sales" upperBound="-1"
+        eType="#//Sale" eOpposite="#//Sale/employees"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Person" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="getDisplayName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="birthDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="phoneNumbers" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="emails" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="PaymentType">
-    <eLiterals name="CASH"/>
-    <eLiterals name="CHEQUE" value="1"/>
-    <eLiterals name="CREDIT_CARD" value="2"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Payment" abstract="true" interface="true"
+      eSuperTypes="#//Valuable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="customer" eType="#//Customer"
+        eOpposite="#//Customer/payments"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sale" eType="#//Sale" eOpposite="#//Sale/payments"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Valuable" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ChequePayment" eSuperTypes="#//Payment">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="deposited" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CashPayment" eSuperTypes="#//Payment"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ElectronicPayment" eSuperTypes="#//Payment"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BankOperation" eSuperTypes="#//Valuable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AccountBook">
+    <eOperations name="depositCash">
+      <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    </eOperations>
+    <eOperations name="depositCheque">
+      <eParameters name="cheque" eType="#//ChequePayment"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bankOperations" upperBound="-1"
+        eType="#//BankOperation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cashFlow" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="shop" lowerBound="1" eType="#//Shop"
+        eOpposite="#//Shop/accountBook"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="payments" upperBound="-1"
+        eType="#//Payment" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

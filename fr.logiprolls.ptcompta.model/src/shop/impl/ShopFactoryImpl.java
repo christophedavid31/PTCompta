@@ -60,6 +60,11 @@ public class ShopFactoryImpl extends EFactoryImpl implements ShopFactory {
 			case ShopPackage.CUSTOMER: return createCustomer();
 			case ShopPackage.SALE: return createSale();
 			case ShopPackage.EMPLOYEE: return createEmployee();
+			case ShopPackage.CHEQUE_PAYMENT: return createChequePayment();
+			case ShopPackage.CASH_PAYMENT: return createCashPayment();
+			case ShopPackage.ELECTRONIC_PAYMENT: return createElectronicPayment();
+			case ShopPackage.BANK_OPERATION: return createBankOperation();
+			case ShopPackage.ACCOUNT_BOOK: return createAccountBook();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -103,6 +108,56 @@ public class ShopFactoryImpl extends EFactoryImpl implements ShopFactory {
 	public Employee createEmployee() {
 		EmployeeImpl employee = new EmployeeImpl();
 		return employee;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ChequePayment createChequePayment() {
+		ChequePaymentImpl chequePayment = new ChequePaymentImpl();
+		return chequePayment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CashPayment createCashPayment() {
+		CashPaymentImpl cashPayment = new CashPaymentImpl();
+		return cashPayment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ElectronicPayment createElectronicPayment() {
+		ElectronicPaymentImpl electronicPayment = new ElectronicPaymentImpl();
+		return electronicPayment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BankOperation createBankOperation() {
+		BankOperationImpl bankOperation = new BankOperationImpl();
+		return bankOperation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AccountBook createAccountBook() {
+		AccountBookImpl accountBook = new AccountBookImpl();
+		return accountBook;
 	}
 
 	/**

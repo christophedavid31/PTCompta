@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link shop.Shop#getCustomers <em>Customers</em>}</li>
  *   <li>{@link shop.Shop#getSales <em>Sales</em>}</li>
  *   <li>{@link shop.Shop#getEmployees <em>Employees</em>}</li>
+ *   <li>{@link shop.Shop#getAccountBook <em>Account Book</em>}</li>
  * </ul>
  *
  * @see shop.ShopPackage#getShop()
@@ -72,5 +73,33 @@ public interface Shop extends EObject {
 	 * @generated
 	 */
 	EList<Employee> getEmployees();
+
+	/**
+	 * Returns the value of the '<em><b>Account Book</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link shop.AccountBook#getShop <em>Shop</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Account Book</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Account Book</em>' containment reference.
+	 * @see #setAccountBook(AccountBook)
+	 * @see shop.ShopPackage#getShop_AccountBook()
+	 * @see shop.AccountBook#getShop
+	 * @model opposite="shop" containment="true" required="true"
+	 * @generated
+	 */
+	AccountBook getAccountBook();
+
+	/**
+	 * Sets the value of the '{@link shop.Shop#getAccountBook <em>Account Book</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Account Book</em>' containment reference.
+	 * @see #getAccountBook()
+	 * @generated
+	 */
+	void setAccountBook(AccountBook value);
 
 } // Shop

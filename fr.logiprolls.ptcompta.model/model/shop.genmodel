@@ -6,28 +6,61 @@
     operationReflection="true" importOrganizing="true">
   <foreignModel>shop.ecore</foreignModel>
   <genPackages prefix="Shop" disposableProviderFactory="true" ecorePackage="shop.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="shop.ecore#//PaymentType">
-      <genEnumLiterals ecoreEnumLiteral="shop.ecore#//PaymentType/CASH"/>
-      <genEnumLiterals ecoreEnumLiteral="shop.ecore#//PaymentType/CHEQUE"/>
-      <genEnumLiterals ecoreEnumLiteral="shop.ecore#//PaymentType/CREDIT_CARD"/>
-    </genEnums>
     <genClasses ecoreClass="shop.ecore#//Shop">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference shop.ecore#//Shop/customers"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference shop.ecore#//Shop/sales"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference shop.ecore#//Shop/employees"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference shop.ecore#//Shop/accountBook"/>
     </genClasses>
-    <genClasses ecoreClass="shop.ecore#//Customer"/>
+    <genClasses ecoreClass="shop.ecore#//Customer">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shop.ecore#//Customer/sales"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shop.ecore#//Customer/payments"/>
+    </genClasses>
     <genClasses ecoreClass="shop.ecore#//Sale">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shop.ecore#//Sale/customer"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shop.ecore#//Sale/employee"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shop.ecore#//Sale/description"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shop.ecore#//Sale/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shop.ecore#//Sale/paymentType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shop.ecore#//Sale/customer"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shop.ecore#//Sale/employees"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shop.ecore#//Sale/payments"/>
     </genClasses>
-    <genClasses ecoreClass="shop.ecore#//Employee"/>
+    <genClasses ecoreClass="shop.ecore#//Employee">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shop.ecore#//Employee/sales"/>
+    </genClasses>
     <genClasses ecoreClass="shop.ecore#//Person">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shop.ecore#//Person/firstName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shop.ecore#//Person/lastName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shop.ecore#//Person/birthDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shop.ecore#//Person/phoneNumbers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shop.ecore#//Person/address"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shop.ecore#//Person/emails"/>
+      <genOperations ecoreOperation="shop.ecore#//Person/getDisplayName"/>
+    </genClasses>
+    <genClasses ecoreClass="shop.ecore#//Payment">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shop.ecore#//Payment/customer"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shop.ecore#//Payment/sale"/>
+    </genClasses>
+    <genClasses ecoreClass="shop.ecore#//Valuable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shop.ecore#//Valuable/date"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shop.ecore#//Valuable/value"/>
+    </genClasses>
+    <genClasses ecoreClass="shop.ecore#//ChequePayment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shop.ecore#//ChequePayment/deposited"/>
+    </genClasses>
+    <genClasses ecoreClass="shop.ecore#//CashPayment"/>
+    <genClasses ecoreClass="shop.ecore#//ElectronicPayment"/>
+    <genClasses ecoreClass="shop.ecore#//BankOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shop.ecore#//BankOperation/description"/>
+    </genClasses>
+    <genClasses ecoreClass="shop.ecore#//AccountBook">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference shop.ecore#//AccountBook/bankOperations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shop.ecore#//AccountBook/cashFlow"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shop.ecore#//AccountBook/shop"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference shop.ecore#//AccountBook/payments"/>
+      <genOperations ecoreOperation="shop.ecore#//AccountBook/depositCash">
+        <genParameters ecoreParameter="shop.ecore#//AccountBook/depositCash/value"/>
+      </genOperations>
+      <genOperations ecoreOperation="shop.ecore#//AccountBook/depositCheque">
+        <genParameters ecoreParameter="shop.ecore#//AccountBook/depositCheque/cheque"/>
+      </genOperations>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
