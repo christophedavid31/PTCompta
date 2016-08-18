@@ -49,6 +49,7 @@
 
 	<!-- the modules that should be built together -->
 	<modules>
+			<module>../fr.logiprolls.ptcompta.model</module>
 	</modules>
 
 </project>
