@@ -4,11 +4,11 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: fr.logiprolls.ptcompta.model.editor;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: shop.presentation.ShopEditorPlugin$Implementation
+Bundle-Activator: fr.logiprolls.ptcompta.model.shop.presentation.ShopEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: shop.presentation
+Export-Package: fr.logiprolls.ptcompta.shop.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  fr.logiprolls.ptcompta.model.edit;visibility:=reexport,

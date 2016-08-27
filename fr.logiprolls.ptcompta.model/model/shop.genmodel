@@ -5,7 +5,8 @@
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
   <foreignModel>shop.ecore</foreignModel>
-  <genPackages prefix="Shop" disposableProviderFactory="true" ecorePackage="shop.ecore#/">
+  <genPackages prefix="Shop" basePackage="fr.logiprolls.ptcompta.model" disposableProviderFactory="true"
+      ecorePackage="shop.ecore#/">
     <genClasses ecoreClass="shop.ecore#//Shop">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference shop.ecore#//Shop/customers"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference shop.ecore#//Shop/sales"/>
@@ -14,13 +15,12 @@
     </genClasses>
     <genClasses ecoreClass="shop.ecore#//Customer">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shop.ecore#//Customer/sales"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shop.ecore#//Customer/payments"/>
     </genClasses>
     <genClasses ecoreClass="shop.ecore#//Sale">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shop.ecore#//Sale/description"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shop.ecore#//Sale/customer"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shop.ecore#//Sale/employees"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shop.ecore#//Sale/payments"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference shop.ecore#//Sale/payments"/>
     </genClasses>
     <genClasses ecoreClass="shop.ecore#//Employee">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shop.ecore#//Employee/sales"/>
@@ -35,7 +35,6 @@
       <genOperations ecoreOperation="shop.ecore#//Person/getDisplayName"/>
     </genClasses>
     <genClasses ecoreClass="shop.ecore#//Payment">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shop.ecore#//Payment/customer"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shop.ecore#//Payment/sale"/>
     </genClasses>
     <genClasses ecoreClass="shop.ecore#//Valuable">
@@ -54,7 +53,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference shop.ecore#//AccountBook/bankOperations"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shop.ecore#//AccountBook/cashFlow"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shop.ecore#//AccountBook/shop"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference shop.ecore#//AccountBook/payments"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shop.ecore#//AccountBook/payments"/>
       <genOperations ecoreOperation="shop.ecore#//AccountBook/depositCash">
         <genParameters ecoreParameter="shop.ecore#//AccountBook/depositCash/value"/>
       </genOperations>

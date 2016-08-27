@@ -12,9 +12,9 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="shop.presentation.ShopModelWizardID"
+            id="fr.logiprolls.ptcompta.model.shop.presentation.ShopModelWizardID"
             name="%_UI_ShopModelWizard_label"
-            class="shop.presentation.ShopModelWizard"
+            class="fr.logiprolls.ptcompta.model.shop.presentation.ShopModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/ShopModelFile.gif">
          <description>%_UI_ShopModelWizard_description</description>
@@ -25,13 +25,12 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated shop -->
       <editor
-            id="shop.presentation.ShopEditorID"
+            id="fr.logiprolls.ptcompta.model.shop.presentation.ShopEditorID"
             name="%_UI_ShopEditor_label"
             icon="icons/full/obj16/ShopModelFile.gif"
             extensions="shop"
-            class="shop.presentation.ShopEditor"
-            contributorClass="shop.presentation.ShopActionBarContributor">
+            class="fr.logiprolls.ptcompta.model.shop.presentation.ShopEditor"
+            contributorClass="fr.logiprolls.ptcompta.model.shop.presentation.ShopActionBarContributor">
       </editor>
    </extension>
-
 </plugin>

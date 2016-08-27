@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: shop.tests
+Export-Package: fr.logiprolls.ptcompta.shop.tests
 Require-Bundle: org.eclipse.core.runtime,
  fr.logiprolls.ptcompta.model;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,

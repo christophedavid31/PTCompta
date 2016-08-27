@@ -14,8 +14,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="Customer" eSuperTypes="#//Person">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sales" upperBound="-1"
         eType="#//Sale" eOpposite="#//Sale/customer"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="payments" upperBound="-1"
-        eType="#//Payment" eOpposite="#//Payment/customer"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Sale" eSuperTypes="#//Valuable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -24,7 +22,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="employees" lowerBound="1"
         upperBound="-1" eType="#//Employee" eOpposite="#//Employee/sales"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="payments" upperBound="-1"
-        eType="#//Payment" eOpposite="#//Payment/sale"/>
+        eType="#//Payment" containment="true" eOpposite="#//Payment/sale"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Employee" eSuperTypes="#//Person">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sales" upperBound="-1"
@@ -45,8 +43,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Payment" abstract="true" interface="true"
       eSuperTypes="#//Valuable">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="customer" eType="#//Customer"
-        eOpposite="#//Customer/payments"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sale" eType="#//Sale" eOpposite="#//Sale/payments"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Valuable" abstract="true" interface="true">
@@ -74,6 +70,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="shop" lowerBound="1" eType="#//Shop"
         eOpposite="#//Shop/accountBook"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="payments" upperBound="-1"
-        eType="#//Payment" containment="true"/>
+        eType="#//Payment"/>
   </eClassifiers>
 </ecore:EPackage>
