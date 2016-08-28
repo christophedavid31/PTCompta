@@ -642,13 +642,22 @@ public interface ShopPackage extends EPackage {
 	int CHEQUE_PAYMENT__DEPOSITED = PAYMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Deposit Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHEQUE_PAYMENT__DEPOSIT_DATE = PAYMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Cheque Payment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHEQUE_PAYMENT_FEATURE_COUNT = PAYMENT_FEATURE_COUNT + 1;
+	int CHEQUE_PAYMENT_FEATURE_COUNT = PAYMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Cheque Payment</em>' class.
@@ -886,16 +895,16 @@ public interface ShopPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOUNT_BOOK___DEPOSIT_CASH__FLOAT = 0;
+	int ACCOUNT_BOOK___DEPOSIT_CASH__FLOAT_DATE = 0;
 
 	/**
-	 * The operation id for the '<em>Deposit Cheque</em>' operation.
+	 * The operation id for the '<em>Deposit Cheques</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOUNT_BOOK___DEPOSIT_CHEQUE__CHEQUEPAYMENT = 1;
+	int ACCOUNT_BOOK___DEPOSIT_CHEQUES__ELIST_DATE = 1;
 
 	/**
 	 * The number of operations of the '<em>Account Book</em>' class.
@@ -1218,6 +1227,17 @@ public interface ShopPackage extends EPackage {
 	EAttribute getChequePayment_Deposited();
 
 	/**
+	 * Returns the meta object for the attribute '{@link fr.logiprolls.ptcompta.shop.ChequePayment#getDepositDate <em>Deposit Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Deposit Date</em>'.
+	 * @see fr.logiprolls.ptcompta.shop.ChequePayment#getDepositDate()
+	 * @see #getChequePayment()
+	 * @generated
+	 */
+	EAttribute getChequePayment_DepositDate();
+
+	/**
 	 * Returns the meta object for class '{@link fr.logiprolls.ptcompta.shop.CashPayment <em>Cash Payment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1313,24 +1333,24 @@ public interface ShopPackage extends EPackage {
 	EReference getAccountBook_Payments();
 
 	/**
-	 * Returns the meta object for the '{@link fr.logiprolls.ptcompta.shop.AccountBook#depositCash(float) <em>Deposit Cash</em>}' operation.
+	 * Returns the meta object for the '{@link fr.logiprolls.ptcompta.shop.AccountBook#depositCash(float, java.util.Date) <em>Deposit Cash</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Deposit Cash</em>' operation.
-	 * @see fr.logiprolls.ptcompta.shop.AccountBook#depositCash(float)
+	 * @see fr.logiprolls.ptcompta.shop.AccountBook#depositCash(float, java.util.Date)
 	 * @generated
 	 */
-	EOperation getAccountBook__DepositCash__float();
+	EOperation getAccountBook__DepositCash__float_Date();
 
 	/**
-	 * Returns the meta object for the '{@link fr.logiprolls.ptcompta.shop.AccountBook#depositCheque(fr.logiprolls.ptcompta.shop.ChequePayment) <em>Deposit Cheque</em>}' operation.
+	 * Returns the meta object for the '{@link fr.logiprolls.ptcompta.shop.AccountBook#depositCheques(org.eclipse.emf.common.util.EList, java.util.Date) <em>Deposit Cheques</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Deposit Cheque</em>' operation.
-	 * @see fr.logiprolls.ptcompta.shop.AccountBook#depositCheque(fr.logiprolls.ptcompta.shop.ChequePayment)
+	 * @return the meta object for the '<em>Deposit Cheques</em>' operation.
+	 * @see fr.logiprolls.ptcompta.shop.AccountBook#depositCheques(org.eclipse.emf.common.util.EList, java.util.Date)
 	 * @generated
 	 */
-	EOperation getAccountBook__DepositCheque__ChequePayment();
+	EOperation getAccountBook__DepositCheques__EList_Date();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1604,6 +1624,14 @@ public interface ShopPackage extends EPackage {
 		EAttribute CHEQUE_PAYMENT__DEPOSITED = eINSTANCE.getChequePayment_Deposited();
 
 		/**
+		 * The meta object literal for the '<em><b>Deposit Date</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CHEQUE_PAYMENT__DEPOSIT_DATE = eINSTANCE.getChequePayment_DepositDate();
+
+		/**
 		 * The meta object literal for the '{@link fr.logiprolls.ptcompta.shop.impl.CashPaymentImpl <em>Cash Payment</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1689,15 +1717,15 @@ public interface ShopPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ACCOUNT_BOOK___DEPOSIT_CASH__FLOAT = eINSTANCE.getAccountBook__DepositCash__float();
+		EOperation ACCOUNT_BOOK___DEPOSIT_CASH__FLOAT_DATE = eINSTANCE.getAccountBook__DepositCash__float_Date();
 
 		/**
-		 * The meta object literal for the '<em><b>Deposit Cheque</b></em>' operation.
+		 * The meta object literal for the '<em><b>Deposit Cheques</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ACCOUNT_BOOK___DEPOSIT_CHEQUE__CHEQUEPAYMENT = eINSTANCE.getAccountBook__DepositCheque__ChequePayment();
+		EOperation ACCOUNT_BOOK___DEPOSIT_CHEQUES__ELIST_DATE = eINSTANCE.getAccountBook__DepositCheques__EList_Date();
 
 	}
 

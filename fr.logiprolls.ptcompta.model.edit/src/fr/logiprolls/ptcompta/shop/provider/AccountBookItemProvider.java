@@ -6,7 +6,6 @@ package fr.logiprolls.ptcompta.shop.provider;
 import fr.logiprolls.ptcompta.shop.AccountBook;
 import fr.logiprolls.ptcompta.shop.ShopFactory;
 import fr.logiprolls.ptcompta.shop.ShopPackage;
-
 import java.util.Collection;
 import java.util.List;
 

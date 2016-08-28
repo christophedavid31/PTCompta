@@ -4,7 +4,6 @@ package fr.logiprolls.ptcompta.shop.tests;
 
 import fr.logiprolls.ptcompta.shop.Customer;
 import fr.logiprolls.ptcompta.shop.ShopFactory;
-
 import junit.textui.TestRunner;
 
 /**

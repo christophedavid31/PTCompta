@@ -204,9 +204,9 @@
                 <styles xmi:type="notation:FontStyle" xmi:id="_eFnm4WhXEeaVq7mF2pV7Tw" fontName=".SF NS Text" fontHeight="8"/>
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_eFnm4mhXEeaVq7mF2pV7Tw"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_ejNh0GhXEeaVq7mF2pV7Tw" type="3010" element="_ei_fYGhXEeaVq7mF2pV7Tw">
-                <styles xmi:type="notation:FontStyle" xmi:id="_ejNh0WhXEeaVq7mF2pV7Tw" fontName=".SF NS Text" fontHeight="8"/>
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_ejNh0mhXEeaVq7mF2pV7Tw"/>
+              <children xmi:type="notation:Node" xmi:id="_hNQggG0pEeaZ9o_pcpggYg" type="3010" element="_hNDsMG0pEeaZ9o_pcpggYg">
+                <styles xmi:type="notation:FontStyle" xmi:id="_hNQggW0pEeaZ9o_pcpggYg" fontName=".SF NS Text" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_hNQggm0pEeaZ9o_pcpggYg"/>
               </children>
               <styles xmi:type="notation:SortingStyle" xmi:id="_3po7FWhUEeaVq7mF2pV7Tw"/>
               <styles xmi:type="notation:FilteringStyle" xmi:id="_3po7FmhUEeaVq7mF2pV7Tw"/>
@@ -897,20 +897,21 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_eFY9YGhXEeaVq7mF2pV7Tw" name="depositCash(value EFloat)" tooltipText="depositCash(value)">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_eFY9YGhXEeaVq7mF2pV7Tw" name="depositCash(cashValue EFloat, date EDate)" tooltipText="depositCash(cashValue, date)">
           <target xmi:type="ecore:EOperation" href="shop.ecore#//AccountBook/depositCash"/>
           <semanticElements xmi:type="ecore:EOperation" href="shop.ecore#//AccountBook/depositCash"/>
-          <semanticElements xmi:type="ecore:EParameter" href="shop.ecore#//AccountBook/depositCash/value"/>
+          <semanticElements xmi:type="ecore:EParameter" href="shop.ecore#//AccountBook/depositCash/cashValue"/>
+          <semanticElements xmi:type="ecore:EParameter" href="shop.ecore#//AccountBook/depositCash/date"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_eFZkcGhXEeaVq7mF2pV7Tw" labelAlignment="LEFT">
             <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_ei_fYGhXEeaVq7mF2pV7Tw" name="depositCheque(cheque ChequePayment)" tooltipText="depositCheque(cheque)">
-          <target xmi:type="ecore:EOperation" href="shop.ecore#//AccountBook/depositCheque"/>
-          <semanticElements xmi:type="ecore:EOperation" href="shop.ecore#//AccountBook/depositCheque"/>
-          <semanticElements xmi:type="ecore:EParameter" href="shop.ecore#//AccountBook/depositCheque/cheque"/>
-          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_ei_fYWhXEeaVq7mF2pV7Tw" labelAlignment="LEFT">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_hNDsMG0pEeaZ9o_pcpggYg" name="depositCheques(cheque ChequePayment)" tooltipText="depositCheques(cheque)">
+          <target xmi:type="ecore:EOperation" href="shop.ecore#//AccountBook/depositCheques"/>
+          <semanticElements xmi:type="ecore:EOperation" href="shop.ecore#//AccountBook/depositCheques"/>
+          <semanticElements xmi:type="ecore:EParameter" href="shop.ecore#//AccountBook/depositCheques/cheque"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_hNETQG0pEeaZ9o_pcpggYg" labelAlignment="LEFT">
             <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>

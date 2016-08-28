@@ -2,6 +2,8 @@
  */
 package fr.logiprolls.ptcompta.shop;
 
+import java.util.Date;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -118,14 +120,14 @@ public interface AccountBook extends EObject {
 	 * @model
 	 * @generated
 	 */
-	void depositCash(float value);
+	void depositCash(float cashValue, Date date);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model chequesMany="true"
 	 * @generated
 	 */
-	void depositCheque(ChequePayment cheque);
+	void depositCheques(EList<ChequePayment> cheques, Date date);
 
 } // AccountBook

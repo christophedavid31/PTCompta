@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.logiprolls.ptcompta.model/src" modelPluginID="fr.logiprolls.ptcompta.model"
-    modelName="Shop" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    templateDirectory="" modelName="Shop" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
-    operationReflection="true" importOrganizing="true">
+    interfaceNamePattern="{0}" classNamePattern="{0}Impl" operationReflection="true"
+    importOrganizing="true">
   <foreignModel>shop.ecore</foreignModel>
-  <genPackages prefix="Shop" basePackage="fr.logiprolls.ptcompta.model" disposableProviderFactory="true"
+  <genPackages prefix="Shop" basePackage="fr.logiprolls.ptcompta" disposableProviderFactory="true"
       ecorePackage="shop.ecore#/">
     <genClasses ecoreClass="shop.ecore#//Shop">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference shop.ecore#//Shop/customers"/>
@@ -43,6 +44,7 @@
     </genClasses>
     <genClasses ecoreClass="shop.ecore#//ChequePayment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shop.ecore#//ChequePayment/deposited"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shop.ecore#//ChequePayment/depositDate"/>
     </genClasses>
     <genClasses ecoreClass="shop.ecore#//CashPayment"/>
     <genClasses ecoreClass="shop.ecore#//ElectronicPayment"/>
@@ -55,10 +57,12 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shop.ecore#//AccountBook/shop"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shop.ecore#//AccountBook/payments"/>
       <genOperations ecoreOperation="shop.ecore#//AccountBook/depositCash">
-        <genParameters ecoreParameter="shop.ecore#//AccountBook/depositCash/value"/>
+        <genParameters ecoreParameter="shop.ecore#//AccountBook/depositCash/cashValue"/>
+        <genParameters ecoreParameter="shop.ecore#//AccountBook/depositCash/date"/>
       </genOperations>
-      <genOperations ecoreOperation="shop.ecore#//AccountBook/depositCheque">
-        <genParameters ecoreParameter="shop.ecore#//AccountBook/depositCheque/cheque"/>
+      <genOperations ecoreOperation="shop.ecore#//AccountBook/depositCheques">
+        <genParameters ecoreParameter="shop.ecore#//AccountBook/depositCheques/cheques"/>
+        <genParameters ecoreParameter="shop.ecore#//AccountBook/depositCheques/date"/>
       </genOperations>
     </genClasses>
   </genPackages>

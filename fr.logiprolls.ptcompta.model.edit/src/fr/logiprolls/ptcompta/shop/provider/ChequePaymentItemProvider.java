@@ -5,7 +5,6 @@ package fr.logiprolls.ptcompta.shop.provider;
 
 import fr.logiprolls.ptcompta.shop.ChequePayment;
 import fr.logiprolls.ptcompta.shop.ShopPackage;
-
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -65,6 +64,7 @@ public class ChequePaymentItemProvider
 			addValuePropertyDescriptor(object);
 			addSalePropertyDescriptor(object);
 			addDepositedPropertyDescriptor(object);
+			addDepositDatePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -158,6 +158,28 @@ public class ChequePaymentItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Deposit Date feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDepositDatePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ChequePayment_depositDate_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ChequePayment_depositDate_feature", "_UI_ChequePayment_type"),
+				 ShopPackage.Literals.CHEQUE_PAYMENT__DEPOSIT_DATE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns ChequePayment.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -199,6 +221,7 @@ public class ChequePaymentItemProvider
 			case ShopPackage.CHEQUE_PAYMENT__DATE:
 			case ShopPackage.CHEQUE_PAYMENT__VALUE:
 			case ShopPackage.CHEQUE_PAYMENT__DEPOSITED:
+			case ShopPackage.CHEQUE_PAYMENT__DEPOSIT_DATE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

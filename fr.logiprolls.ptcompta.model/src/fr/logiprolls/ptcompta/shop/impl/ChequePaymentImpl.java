@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link fr.logiprolls.ptcompta.shop.impl.ChequePaymentImpl#getValue <em>Value</em>}</li>
  *   <li>{@link fr.logiprolls.ptcompta.shop.impl.ChequePaymentImpl#getSale <em>Sale</em>}</li>
  *   <li>{@link fr.logiprolls.ptcompta.shop.impl.ChequePaymentImpl#isDeposited <em>Deposited</em>}</li>
+ *   <li>{@link fr.logiprolls.ptcompta.shop.impl.ChequePaymentImpl#getDepositDate <em>Deposit Date</em>}</li>
  * </ul>
  *
  * @generated
@@ -95,6 +96,26 @@ public class ChequePaymentImpl extends MinimalEObjectImpl.Container implements C
 	 * @ordered
 	 */
 	protected boolean deposited = DEPOSITED_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDepositDate() <em>Deposit Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDepositDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date DEPOSIT_DATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDepositDate() <em>Deposit Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDepositDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date depositDate = DEPOSIT_DATE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -224,6 +245,27 @@ public class ChequePaymentImpl extends MinimalEObjectImpl.Container implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Date getDepositDate() {
+		return depositDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDepositDate(Date newDepositDate) {
+		Date oldDepositDate = depositDate;
+		depositDate = newDepositDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShopPackage.CHEQUE_PAYMENT__DEPOSIT_DATE, oldDepositDate, depositDate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -279,6 +321,8 @@ public class ChequePaymentImpl extends MinimalEObjectImpl.Container implements C
 				return getSale();
 			case ShopPackage.CHEQUE_PAYMENT__DEPOSITED:
 				return isDeposited();
+			case ShopPackage.CHEQUE_PAYMENT__DEPOSIT_DATE:
+				return getDepositDate();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -302,6 +346,9 @@ public class ChequePaymentImpl extends MinimalEObjectImpl.Container implements C
 				return;
 			case ShopPackage.CHEQUE_PAYMENT__DEPOSITED:
 				setDeposited((Boolean)newValue);
+				return;
+			case ShopPackage.CHEQUE_PAYMENT__DEPOSIT_DATE:
+				setDepositDate((Date)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -327,6 +374,9 @@ public class ChequePaymentImpl extends MinimalEObjectImpl.Container implements C
 			case ShopPackage.CHEQUE_PAYMENT__DEPOSITED:
 				setDeposited(DEPOSITED_EDEFAULT);
 				return;
+			case ShopPackage.CHEQUE_PAYMENT__DEPOSIT_DATE:
+				setDepositDate(DEPOSIT_DATE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -347,6 +397,8 @@ public class ChequePaymentImpl extends MinimalEObjectImpl.Container implements C
 				return getSale() != null;
 			case ShopPackage.CHEQUE_PAYMENT__DEPOSITED:
 				return deposited != DEPOSITED_EDEFAULT;
+			case ShopPackage.CHEQUE_PAYMENT__DEPOSIT_DATE:
+				return DEPOSIT_DATE_EDEFAULT == null ? depositDate != null : !DEPOSIT_DATE_EDEFAULT.equals(depositDate);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -367,6 +419,8 @@ public class ChequePaymentImpl extends MinimalEObjectImpl.Container implements C
 		result.append(value);
 		result.append(", deposited: ");
 		result.append(deposited);
+		result.append(", depositDate: ");
+		result.append(depositDate);
 		result.append(')');
 		return result.toString();
 	}

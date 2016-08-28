@@ -443,6 +443,15 @@ public class ShopPackageImpl extends EPackageImpl implements ShopPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getChequePayment_DepositDate() {
+		return (EAttribute)chequePaymentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCashPayment() {
 		return cashPaymentEClass;
 	}
@@ -524,7 +533,7 @@ public class ShopPackageImpl extends EPackageImpl implements ShopPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAccountBook__DepositCash__float() {
+	public EOperation getAccountBook__DepositCash__float_Date() {
 		return accountBookEClass.getEOperations().get(0);
 	}
 
@@ -533,7 +542,7 @@ public class ShopPackageImpl extends EPackageImpl implements ShopPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAccountBook__DepositCheque__ChequePayment() {
+	public EOperation getAccountBook__DepositCheques__EList_Date() {
 		return accountBookEClass.getEOperations().get(1);
 	}
 
@@ -601,6 +610,7 @@ public class ShopPackageImpl extends EPackageImpl implements ShopPackage {
 
 		chequePaymentEClass = createEClass(CHEQUE_PAYMENT);
 		createEAttribute(chequePaymentEClass, CHEQUE_PAYMENT__DEPOSITED);
+		createEAttribute(chequePaymentEClass, CHEQUE_PAYMENT__DEPOSIT_DATE);
 
 		cashPaymentEClass = createEClass(CASH_PAYMENT);
 
@@ -614,8 +624,8 @@ public class ShopPackageImpl extends EPackageImpl implements ShopPackage {
 		createEAttribute(accountBookEClass, ACCOUNT_BOOK__CASH_FLOW);
 		createEReference(accountBookEClass, ACCOUNT_BOOK__SHOP);
 		createEReference(accountBookEClass, ACCOUNT_BOOK__PAYMENTS);
-		createEOperation(accountBookEClass, ACCOUNT_BOOK___DEPOSIT_CASH__FLOAT);
-		createEOperation(accountBookEClass, ACCOUNT_BOOK___DEPOSIT_CHEQUE__CHEQUEPAYMENT);
+		createEOperation(accountBookEClass, ACCOUNT_BOOK___DEPOSIT_CASH__FLOAT_DATE);
+		createEOperation(accountBookEClass, ACCOUNT_BOOK___DEPOSIT_CHEQUES__ELIST_DATE);
 	}
 
 	/**
@@ -693,6 +703,7 @@ public class ShopPackageImpl extends EPackageImpl implements ShopPackage {
 
 		initEClass(chequePaymentEClass, ChequePayment.class, "ChequePayment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getChequePayment_Deposited(), ecorePackage.getEBoolean(), "deposited", null, 0, 1, ChequePayment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getChequePayment_DepositDate(), ecorePackage.getEDate(), "depositDate", null, 0, 1, ChequePayment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(cashPaymentEClass, CashPayment.class, "CashPayment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -707,11 +718,13 @@ public class ShopPackageImpl extends EPackageImpl implements ShopPackage {
 		initEReference(getAccountBook_Shop(), this.getShop(), this.getShop_AccountBook(), "shop", null, 1, 1, AccountBook.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAccountBook_Payments(), this.getPayment(), null, "payments", null, 0, -1, AccountBook.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = initEOperation(getAccountBook__DepositCash__float(), null, "depositCash", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEFloat(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getAccountBook__DepositCash__float_Date(), null, "depositCash", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEFloat(), "cashValue", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "date", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getAccountBook__DepositCheque__ChequePayment(), null, "depositCheque", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getChequePayment(), "cheque", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getAccountBook__DepositCheques__EList_Date(), null, "depositCheques", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getChequePayment(), "cheques", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "date", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

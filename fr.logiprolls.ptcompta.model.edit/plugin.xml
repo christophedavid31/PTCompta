@@ -10,7 +10,7 @@
       <!-- @generated shop -->
       <factory
             uri="http://www.logiprolls.fr/shop"
-            class="fr.logiprolls.ptcompta.model.shop.provider.ShopItemProviderAdapterFactory"
+            class="fr.logiprolls.ptcompta.shop.provider.ShopItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

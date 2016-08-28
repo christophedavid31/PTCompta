@@ -4,7 +4,6 @@ package fr.logiprolls.ptcompta.shop.tests;
 
 import fr.logiprolls.ptcompta.shop.ChequePayment;
 import fr.logiprolls.ptcompta.shop.ShopFactory;
-
 import junit.framework.TestCase;
 
 import junit.textui.TestRunner;

@@ -51,6 +51,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ChequePayment" eSuperTypes="#//Payment">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="deposited" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="depositDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CashPayment" eSuperTypes="#//Payment"/>
   <eClassifiers xsi:type="ecore:EClass" name="ElectronicPayment" eSuperTypes="#//Payment"/>
@@ -59,10 +60,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AccountBook">
     <eOperations name="depositCash">
-      <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+      <eParameters name="cashValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+      <eParameters name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     </eOperations>
-    <eOperations name="depositCheque">
-      <eParameters name="cheque" eType="#//ChequePayment"/>
+    <eOperations name="depositCheques">
+      <eParameters name="cheques" upperBound="-1" eType="#//ChequePayment"/>
+      <eParameters name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bankOperations" upperBound="-1"
         eType="#//BankOperation" containment="true"/>

@@ -10,7 +10,7 @@
       <!-- @generated shop -->
       <package
             uri="http://www.logiprolls.fr/shop"
-            class="fr.logiprolls.ptcompta.model.shop.ShopPackage"
+            class="fr.logiprolls.ptcompta.shop.ShopPackage"
             genModel="model/shop.genmodel"/>
    </extension>
 

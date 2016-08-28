@@ -5,7 +5,6 @@ package fr.logiprolls.ptcompta.shop.tests;
 import fr.logiprolls.ptcompta.shop.Shop;
 import fr.logiprolls.ptcompta.shop.ShopFactory;
 import fr.logiprolls.ptcompta.shop.ShopPackage;
-
 import java.io.File;
 import java.io.IOException;
 

@@ -4,7 +4,6 @@ package fr.logiprolls.ptcompta.shop.tests;
 
 import fr.logiprolls.ptcompta.shop.AccountBook;
 import fr.logiprolls.ptcompta.shop.ShopFactory;
-
 import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
@@ -16,8 +15,8 @@ import junit.textui.TestRunner;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link fr.logiprolls.ptcompta.shop.AccountBook#depositCash(float) <em>Deposit Cash</em>}</li>
- *   <li>{@link fr.logiprolls.ptcompta.shop.AccountBook#depositCheque(fr.logiprolls.ptcompta.shop.ChequePayment) <em>Deposit Cheque</em>}</li>
+ *   <li>{@link fr.logiprolls.ptcompta.shop.AccountBook#depositCash(float, java.util.Date) <em>Deposit Cash</em>}</li>
+ *   <li>{@link fr.logiprolls.ptcompta.shop.AccountBook#depositCheques(org.eclipse.emf.common.util.EList, java.util.Date) <em>Deposit Cheques</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -94,26 +93,26 @@ public class AccountBookTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link fr.logiprolls.ptcompta.shop.AccountBook#depositCash(float) <em>Deposit Cash</em>}' operation.
+	 * Tests the '{@link fr.logiprolls.ptcompta.shop.AccountBook#depositCash(float, java.util.Date) <em>Deposit Cash</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see fr.logiprolls.ptcompta.shop.AccountBook#depositCash(float)
+	 * @see fr.logiprolls.ptcompta.shop.AccountBook#depositCash(float, java.util.Date)
 	 * @generated
 	 */
-	public void testDepositCash__float() {
+	public void testDepositCash__float_Date() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link fr.logiprolls.ptcompta.shop.AccountBook#depositCheque(fr.logiprolls.ptcompta.shop.ChequePayment) <em>Deposit Cheque</em>}' operation.
+	 * Tests the '{@link fr.logiprolls.ptcompta.shop.AccountBook#depositCheques(org.eclipse.emf.common.util.EList, java.util.Date) <em>Deposit Cheques</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see fr.logiprolls.ptcompta.shop.AccountBook#depositCheque(fr.logiprolls.ptcompta.shop.ChequePayment)
+	 * @see fr.logiprolls.ptcompta.shop.AccountBook#depositCheques(org.eclipse.emf.common.util.EList, java.util.Date)
 	 * @generated
 	 */
-	public void testDepositCheque__ChequePayment() {
+	public void testDepositCheques__EList_Date() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

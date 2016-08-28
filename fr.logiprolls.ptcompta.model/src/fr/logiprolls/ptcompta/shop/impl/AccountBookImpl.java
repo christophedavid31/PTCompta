@@ -12,6 +12,7 @@ import fr.logiprolls.ptcompta.shop.ShopPackage;
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -193,24 +194,52 @@ public class AccountBookImpl extends MinimalEObjectImpl.Container implements Acc
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * Creates a Bank Operation for depositing given cash value at given date.
+	 * cashFlow is decreased from the same value
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public void depositCash(float value) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public void depositCash(float cashValue, Date date) {
+		
+		if (cashFlow>=cashValue)
+		{
+			cashFlow -= cashValue;
+			
+			BankOperation bo = new BankOperationImpl();
+			bo.setDescription("Cash deposit");
+			bo.setDate(date);
+			bo.setValue(cashValue);
+			
+			bankOperations.add(bo);
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * Creates a Bank Operation for depositing given cheques at given date.
+	 * Corresponding cheques are set as deposited.
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public void depositCheque(ChequePayment cheque) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public void depositCheques(EList<ChequePayment> cheques, Date date) {
+		
+		BankOperation bo = new BankOperationImpl();
+		bo.setDescription("Cheques deposit");
+		bo.setDate(date);
+		bo.setValue((float) 0.);
+
+		for ( ChequePayment cp : cheques )
+		{
+			if (! cp.isDeposited())
+			{
+				bo.setValue( bo.getValue() + cp.getValue());
+				cp.setDeposited(true);
+				cp.setDepositDate(date);
+			}
+		}
+		
+		if (bo.getValue()>0.)
+			bankOperations.add(bo);		
 	}
 
 	/**
@@ -356,13 +385,14 @@ public class AccountBookImpl extends MinimalEObjectImpl.Container implements Acc
 	 * @generated
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case ShopPackage.ACCOUNT_BOOK___DEPOSIT_CASH__FLOAT:
-				depositCash((Float)arguments.get(0));
+			case ShopPackage.ACCOUNT_BOOK___DEPOSIT_CASH__FLOAT_DATE:
+				depositCash((Float)arguments.get(0), (Date)arguments.get(1));
 				return null;
-			case ShopPackage.ACCOUNT_BOOK___DEPOSIT_CHEQUE__CHEQUEPAYMENT:
-				depositCheque((ChequePayment)arguments.get(0));
+			case ShopPackage.ACCOUNT_BOOK___DEPOSIT_CHEQUES__ELIST_DATE:
+				depositCheques((EList<ChequePayment>)arguments.get(0), (Date)arguments.get(1));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

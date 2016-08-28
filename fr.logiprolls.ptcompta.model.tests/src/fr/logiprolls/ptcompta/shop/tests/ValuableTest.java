@@ -3,7 +3,6 @@
 package fr.logiprolls.ptcompta.shop.tests;
 
 import fr.logiprolls.ptcompta.shop.Valuable;
-
 import junit.framework.TestCase;
 
 /**
