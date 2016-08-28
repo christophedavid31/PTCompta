@@ -3,8 +3,8 @@
 package fr.logiprolls.ptcompta.shop.provider;
 
 
-import fr.logiprolls.ptcompta.shop.BankOperation;
-import fr.logiprolls.ptcompta.shop.ShopPackage;
+import fr.logiprolls.ptcompta.shop.MBankOperation;
+import fr.logiprolls.ptcompta.shop.MShopPackage;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -26,7 +26,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link fr.logiprolls.ptcompta.shop.BankOperation} object.
+ * This is the item provider adapter for a {@link fr.logiprolls.ptcompta.shop.MBankOperation} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
@@ -80,7 +80,7 @@ public class BankOperationItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Valuable_date_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Valuable_date_feature", "_UI_Valuable_type"),
-				 ShopPackage.Literals.VALUABLE__DATE,
+				 MShopPackage.Literals.VALUABLE__DATE,
 				 true,
 				 false,
 				 false,
@@ -102,7 +102,7 @@ public class BankOperationItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Valuable_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Valuable_value_feature", "_UI_Valuable_type"),
-				 ShopPackage.Literals.VALUABLE__VALUE,
+				 MShopPackage.Literals.VALUABLE__VALUE,
 				 true,
 				 false,
 				 false,
@@ -124,7 +124,7 @@ public class BankOperationItemProvider
 				 getResourceLocator(),
 				 getString("_UI_BankOperation_description_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_BankOperation_description_feature", "_UI_BankOperation_type"),
-				 ShopPackage.Literals.BANK_OPERATION__DESCRIPTION,
+				 MShopPackage.Literals.BANK_OPERATION__DESCRIPTION,
 				 true,
 				 false,
 				 false,
@@ -152,7 +152,7 @@ public class BankOperationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Date labelValue = ((BankOperation)object).getDate();
+		Date labelValue = ((MBankOperation)object).getDate();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_BankOperation_type") :
@@ -171,10 +171,10 @@ public class BankOperationItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(BankOperation.class)) {
-			case ShopPackage.BANK_OPERATION__DATE:
-			case ShopPackage.BANK_OPERATION__VALUE:
-			case ShopPackage.BANK_OPERATION__DESCRIPTION:
+		switch (notification.getFeatureID(MBankOperation.class)) {
+			case MShopPackage.BANK_OPERATION__DATE:
+			case MShopPackage.BANK_OPERATION__VALUE:
+			case MShopPackage.BANK_OPERATION__DESCRIPTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

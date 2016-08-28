@@ -1,17 +1,7 @@
-/**
- */
 package fr.logiprolls.ptcompta.shop;
 
+// This interface overrides the generated interface and will be returned by factory
+public interface CashPayment extends MCashPayment
+{
 
-/**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Cash Payment</b></em>'.
- * <!-- end-user-doc -->
- *
- *
- * @see fr.logiprolls.ptcompta.shop.ShopPackage#getCashPayment()
- * @model
- * @generated
- */
-public interface CashPayment extends Payment {
-} // CashPayment
+}

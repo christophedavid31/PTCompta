@@ -3,8 +3,8 @@
 package fr.logiprolls.ptcompta.shop.provider;
 
 
-import fr.logiprolls.ptcompta.shop.Person;
-import fr.logiprolls.ptcompta.shop.ShopPackage;
+import fr.logiprolls.ptcompta.shop.MPerson;
+import fr.logiprolls.ptcompta.shop.MShopPackage;
 import java.util.Collection;
 import java.util.List;
 
@@ -25,7 +25,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link fr.logiprolls.ptcompta.shop.Person} object.
+ * This is the item provider adapter for a {@link fr.logiprolls.ptcompta.shop.MPerson} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
@@ -82,7 +82,7 @@ public class PersonItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Person_firstName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Person_firstName_feature", "_UI_Person_type"),
-				 ShopPackage.Literals.PERSON__FIRST_NAME,
+				 MShopPackage.Literals.PERSON__FIRST_NAME,
 				 true,
 				 false,
 				 false,
@@ -104,7 +104,7 @@ public class PersonItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Person_lastName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Person_lastName_feature", "_UI_Person_type"),
-				 ShopPackage.Literals.PERSON__LAST_NAME,
+				 MShopPackage.Literals.PERSON__LAST_NAME,
 				 true,
 				 false,
 				 false,
@@ -126,7 +126,7 @@ public class PersonItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Person_birthDate_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Person_birthDate_feature", "_UI_Person_type"),
-				 ShopPackage.Literals.PERSON__BIRTH_DATE,
+				 MShopPackage.Literals.PERSON__BIRTH_DATE,
 				 true,
 				 false,
 				 false,
@@ -148,7 +148,7 @@ public class PersonItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Person_phoneNumbers_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Person_phoneNumbers_feature", "_UI_Person_type"),
-				 ShopPackage.Literals.PERSON__PHONE_NUMBERS,
+				 MShopPackage.Literals.PERSON__PHONE_NUMBERS,
 				 true,
 				 false,
 				 false,
@@ -170,7 +170,7 @@ public class PersonItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Person_address_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Person_address_feature", "_UI_Person_type"),
-				 ShopPackage.Literals.PERSON__ADDRESS,
+				 MShopPackage.Literals.PERSON__ADDRESS,
 				 true,
 				 false,
 				 false,
@@ -192,7 +192,7 @@ public class PersonItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Person_emails_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Person_emails_feature", "_UI_Person_type"),
-				 ShopPackage.Literals.PERSON__EMAILS,
+				 MShopPackage.Literals.PERSON__EMAILS,
 				 true,
 				 false,
 				 false,
@@ -220,7 +220,7 @@ public class PersonItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Person)object).getFirstName();
+		String label = ((MPerson)object).getFirstName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Person_type") :
 			getString("_UI_Person_type") + " " + label;
@@ -238,13 +238,13 @@ public class PersonItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Person.class)) {
-			case ShopPackage.PERSON__FIRST_NAME:
-			case ShopPackage.PERSON__LAST_NAME:
-			case ShopPackage.PERSON__BIRTH_DATE:
-			case ShopPackage.PERSON__PHONE_NUMBERS:
-			case ShopPackage.PERSON__ADDRESS:
-			case ShopPackage.PERSON__EMAILS:
+		switch (notification.getFeatureID(MPerson.class)) {
+			case MShopPackage.PERSON__FIRST_NAME:
+			case MShopPackage.PERSON__LAST_NAME:
+			case MShopPackage.PERSON__BIRTH_DATE:
+			case MShopPackage.PERSON__PHONE_NUMBERS:
+			case MShopPackage.PERSON__ADDRESS:
+			case MShopPackage.PERSON__EMAILS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

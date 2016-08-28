@@ -2,8 +2,8 @@
  */
 package fr.logiprolls.ptcompta.shop.tests;
 
-import fr.logiprolls.ptcompta.shop.Customer;
-import fr.logiprolls.ptcompta.shop.ShopFactory;
+import fr.logiprolls.ptcompta.shop.MCustomer;
+import fr.logiprolls.ptcompta.shop.MShopFactory;
 import junit.textui.TestRunner;
 
 /**
@@ -40,8 +40,8 @@ public class CustomerTest extends PersonTest {
 	 * @generated
 	 */
 	@Override
-	protected Customer getFixture() {
-		return (Customer)fixture;
+	protected MCustomer getFixture() {
+		return (MCustomer)fixture;
 	}
 
 	/**
@@ -52,7 +52,7 @@ public class CustomerTest extends PersonTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(ShopFactory.eINSTANCE.createCustomer());
+		setFixture(MShopFactory.eINSTANCE.createCustomer());
 	}
 
 	/**

@@ -3,8 +3,8 @@
 package fr.logiprolls.ptcompta.shop.provider;
 
 
-import fr.logiprolls.ptcompta.shop.Employee;
-import fr.logiprolls.ptcompta.shop.ShopPackage;
+import fr.logiprolls.ptcompta.shop.MEmployee;
+import fr.logiprolls.ptcompta.shop.MShopPackage;
 import java.util.Collection;
 import java.util.List;
 
@@ -15,7 +15,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link fr.logiprolls.ptcompta.shop.Employee} object.
+ * This is the item provider adapter for a {@link fr.logiprolls.ptcompta.shop.MEmployee} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
@@ -60,7 +60,7 @@ public class EmployeeItemProvider extends PersonItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Employee_sales_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Employee_sales_feature", "_UI_Employee_type"),
-				 ShopPackage.Literals.EMPLOYEE__SALES,
+				 MShopPackage.Literals.EMPLOYEE__SALES,
 				 true,
 				 false,
 				 true,
@@ -88,7 +88,7 @@ public class EmployeeItemProvider extends PersonItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Employee)object).getFirstName();
+		String label = ((MEmployee)object).getFirstName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Employee_type") :
 			getString("_UI_Employee_type") + " " + label;

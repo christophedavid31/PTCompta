@@ -3,8 +3,8 @@
 package fr.logiprolls.ptcompta.shop.provider;
 
 
-import fr.logiprolls.ptcompta.shop.ChequePayment;
-import fr.logiprolls.ptcompta.shop.ShopPackage;
+import fr.logiprolls.ptcompta.shop.MChequePayment;
+import fr.logiprolls.ptcompta.shop.MShopPackage;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -26,7 +26,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link fr.logiprolls.ptcompta.shop.ChequePayment} object.
+ * This is the item provider adapter for a {@link fr.logiprolls.ptcompta.shop.MChequePayment} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
@@ -82,7 +82,7 @@ public class ChequePaymentItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Valuable_date_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Valuable_date_feature", "_UI_Valuable_type"),
-				 ShopPackage.Literals.VALUABLE__DATE,
+				 MShopPackage.Literals.VALUABLE__DATE,
 				 true,
 				 false,
 				 false,
@@ -104,7 +104,7 @@ public class ChequePaymentItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Valuable_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Valuable_value_feature", "_UI_Valuable_type"),
-				 ShopPackage.Literals.VALUABLE__VALUE,
+				 MShopPackage.Literals.VALUABLE__VALUE,
 				 true,
 				 false,
 				 false,
@@ -126,7 +126,7 @@ public class ChequePaymentItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Payment_sale_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Payment_sale_feature", "_UI_Payment_type"),
-				 ShopPackage.Literals.PAYMENT__SALE,
+				 MShopPackage.Literals.PAYMENT__SALE,
 				 true,
 				 false,
 				 true,
@@ -148,7 +148,7 @@ public class ChequePaymentItemProvider
 				 getResourceLocator(),
 				 getString("_UI_ChequePayment_deposited_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ChequePayment_deposited_feature", "_UI_ChequePayment_type"),
-				 ShopPackage.Literals.CHEQUE_PAYMENT__DEPOSITED,
+				 MShopPackage.Literals.CHEQUE_PAYMENT__DEPOSITED,
 				 true,
 				 false,
 				 false,
@@ -170,7 +170,7 @@ public class ChequePaymentItemProvider
 				 getResourceLocator(),
 				 getString("_UI_ChequePayment_depositDate_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ChequePayment_depositDate_feature", "_UI_ChequePayment_type"),
-				 ShopPackage.Literals.CHEQUE_PAYMENT__DEPOSIT_DATE,
+				 MShopPackage.Literals.CHEQUE_PAYMENT__DEPOSIT_DATE,
 				 true,
 				 false,
 				 false,
@@ -198,7 +198,7 @@ public class ChequePaymentItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Date labelValue = ((ChequePayment)object).getDate();
+		Date labelValue = ((MChequePayment)object).getDate();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ChequePayment_type") :
@@ -217,11 +217,11 @@ public class ChequePaymentItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ChequePayment.class)) {
-			case ShopPackage.CHEQUE_PAYMENT__DATE:
-			case ShopPackage.CHEQUE_PAYMENT__VALUE:
-			case ShopPackage.CHEQUE_PAYMENT__DEPOSITED:
-			case ShopPackage.CHEQUE_PAYMENT__DEPOSIT_DATE:
+		switch (notification.getFeatureID(MChequePayment.class)) {
+			case MShopPackage.CHEQUE_PAYMENT__DATE:
+			case MShopPackage.CHEQUE_PAYMENT__VALUE:
+			case MShopPackage.CHEQUE_PAYMENT__DEPOSITED:
+			case MShopPackage.CHEQUE_PAYMENT__DEPOSIT_DATE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

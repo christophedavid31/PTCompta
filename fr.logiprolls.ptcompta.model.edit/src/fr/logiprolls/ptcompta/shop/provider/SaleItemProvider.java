@@ -3,9 +3,9 @@
 package fr.logiprolls.ptcompta.shop.provider;
 
 
-import fr.logiprolls.ptcompta.shop.Sale;
-import fr.logiprolls.ptcompta.shop.ShopFactory;
-import fr.logiprolls.ptcompta.shop.ShopPackage;
+import fr.logiprolls.ptcompta.shop.MSale;
+import fr.logiprolls.ptcompta.shop.MShopFactory;
+import fr.logiprolls.ptcompta.shop.MShopPackage;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -29,7 +29,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link fr.logiprolls.ptcompta.shop.Sale} object.
+ * This is the item provider adapter for a {@link fr.logiprolls.ptcompta.shop.MSale} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
@@ -86,7 +86,7 @@ public class SaleItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Valuable_date_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Valuable_date_feature", "_UI_Valuable_type"),
-				 ShopPackage.Literals.VALUABLE__DATE,
+				 MShopPackage.Literals.VALUABLE__DATE,
 				 true,
 				 false,
 				 false,
@@ -108,7 +108,7 @@ public class SaleItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Valuable_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Valuable_value_feature", "_UI_Valuable_type"),
-				 ShopPackage.Literals.VALUABLE__VALUE,
+				 MShopPackage.Literals.VALUABLE__VALUE,
 				 true,
 				 false,
 				 false,
@@ -130,7 +130,7 @@ public class SaleItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Sale_description_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Sale_description_feature", "_UI_Sale_type"),
-				 ShopPackage.Literals.SALE__DESCRIPTION,
+				 MShopPackage.Literals.SALE__DESCRIPTION,
 				 true,
 				 false,
 				 false,
@@ -152,7 +152,7 @@ public class SaleItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Sale_customer_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Sale_customer_feature", "_UI_Sale_type"),
-				 ShopPackage.Literals.SALE__CUSTOMER,
+				 MShopPackage.Literals.SALE__CUSTOMER,
 				 true,
 				 false,
 				 true,
@@ -174,7 +174,7 @@ public class SaleItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Sale_employees_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Sale_employees_feature", "_UI_Sale_type"),
-				 ShopPackage.Literals.SALE__EMPLOYEES,
+				 MShopPackage.Literals.SALE__EMPLOYEES,
 				 true,
 				 false,
 				 true,
@@ -196,7 +196,7 @@ public class SaleItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Sale_payments_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Sale_payments_feature", "_UI_Sale_type"),
-				 ShopPackage.Literals.SALE__PAYMENTS,
+				 MShopPackage.Literals.SALE__PAYMENTS,
 				 true,
 				 false,
 				 true,
@@ -217,7 +217,7 @@ public class SaleItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ShopPackage.Literals.SALE__PAYMENTS);
+			childrenFeatures.add(MShopPackage.Literals.SALE__PAYMENTS);
 		}
 		return childrenFeatures;
 	}
@@ -254,7 +254,7 @@ public class SaleItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Date labelValue = ((Sale)object).getDate();
+		Date labelValue = ((MSale)object).getDate();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Sale_type") :
@@ -273,13 +273,13 @@ public class SaleItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Sale.class)) {
-			case ShopPackage.SALE__DATE:
-			case ShopPackage.SALE__VALUE:
-			case ShopPackage.SALE__DESCRIPTION:
+		switch (notification.getFeatureID(MSale.class)) {
+			case MShopPackage.SALE__DATE:
+			case MShopPackage.SALE__VALUE:
+			case MShopPackage.SALE__DESCRIPTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ShopPackage.SALE__PAYMENTS:
+			case MShopPackage.SALE__PAYMENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -299,18 +299,18 @@ public class SaleItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ShopPackage.Literals.SALE__PAYMENTS,
-				 ShopFactory.eINSTANCE.createChequePayment()));
+				(MShopPackage.Literals.SALE__PAYMENTS,
+				 MShopFactory.eINSTANCE.createChequePayment()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ShopPackage.Literals.SALE__PAYMENTS,
-				 ShopFactory.eINSTANCE.createCashPayment()));
+				(MShopPackage.Literals.SALE__PAYMENTS,
+				 MShopFactory.eINSTANCE.createCashPayment()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ShopPackage.Literals.SALE__PAYMENTS,
-				 ShopFactory.eINSTANCE.createElectronicPayment()));
+				(MShopPackage.Literals.SALE__PAYMENTS,
+				 MShopFactory.eINSTANCE.createElectronicPayment()));
 	}
 
 	/**

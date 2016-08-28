@@ -2,7 +2,7 @@
  */
 package fr.logiprolls.ptcompta.shop.tests;
 
-import fr.logiprolls.ptcompta.shop.Payment;
+import fr.logiprolls.ptcompta.shop.MPayment;
 import junit.framework.TestCase;
 
 /**
@@ -19,7 +19,7 @@ public abstract class PaymentTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Payment fixture = null;
+	protected MPayment fixture = null;
 
 	/**
 	 * Constructs a new Payment test case with the given name.
@@ -37,7 +37,7 @@ public abstract class PaymentTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(Payment fixture) {
+	protected void setFixture(MPayment fixture) {
 		this.fixture = fixture;
 	}
 
@@ -47,7 +47,7 @@ public abstract class PaymentTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Payment getFixture() {
+	protected MPayment getFixture() {
 		return fixture;
 	}
 

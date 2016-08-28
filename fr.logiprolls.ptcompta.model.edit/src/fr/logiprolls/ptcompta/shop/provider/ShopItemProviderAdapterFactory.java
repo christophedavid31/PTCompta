@@ -72,7 +72,7 @@ public class ShopItemProviderAdapterFactory extends ShopAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fr.logiprolls.ptcompta.shop.Shop} instances.
+	 * This keeps track of the one adapter used for all {@link fr.logiprolls.ptcompta.shop.MShop} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -80,7 +80,7 @@ public class ShopItemProviderAdapterFactory extends ShopAdapterFactory implement
 	protected ShopItemProvider shopItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link fr.logiprolls.ptcompta.shop.Shop}.
+	 * This creates an adapter for a {@link fr.logiprolls.ptcompta.shop.MShop}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -95,7 +95,7 @@ public class ShopItemProviderAdapterFactory extends ShopAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fr.logiprolls.ptcompta.shop.Customer} instances.
+	 * This keeps track of the one adapter used for all {@link fr.logiprolls.ptcompta.shop.MCustomer} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -103,7 +103,7 @@ public class ShopItemProviderAdapterFactory extends ShopAdapterFactory implement
 	protected CustomerItemProvider customerItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link fr.logiprolls.ptcompta.shop.Customer}.
+	 * This creates an adapter for a {@link fr.logiprolls.ptcompta.shop.MCustomer}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -118,7 +118,7 @@ public class ShopItemProviderAdapterFactory extends ShopAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fr.logiprolls.ptcompta.shop.Sale} instances.
+	 * This keeps track of the one adapter used for all {@link fr.logiprolls.ptcompta.shop.MSale} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -126,7 +126,7 @@ public class ShopItemProviderAdapterFactory extends ShopAdapterFactory implement
 	protected SaleItemProvider saleItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link fr.logiprolls.ptcompta.shop.Sale}.
+	 * This creates an adapter for a {@link fr.logiprolls.ptcompta.shop.MSale}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -141,7 +141,7 @@ public class ShopItemProviderAdapterFactory extends ShopAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fr.logiprolls.ptcompta.shop.Employee} instances.
+	 * This keeps track of the one adapter used for all {@link fr.logiprolls.ptcompta.shop.MEmployee} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -149,7 +149,7 @@ public class ShopItemProviderAdapterFactory extends ShopAdapterFactory implement
 	protected EmployeeItemProvider employeeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link fr.logiprolls.ptcompta.shop.Employee}.
+	 * This creates an adapter for a {@link fr.logiprolls.ptcompta.shop.MEmployee}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -164,7 +164,7 @@ public class ShopItemProviderAdapterFactory extends ShopAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fr.logiprolls.ptcompta.shop.ChequePayment} instances.
+	 * This keeps track of the one adapter used for all {@link fr.logiprolls.ptcompta.shop.MChequePayment} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -172,7 +172,7 @@ public class ShopItemProviderAdapterFactory extends ShopAdapterFactory implement
 	protected ChequePaymentItemProvider chequePaymentItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link fr.logiprolls.ptcompta.shop.ChequePayment}.
+	 * This creates an adapter for a {@link fr.logiprolls.ptcompta.shop.MChequePayment}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -187,7 +187,7 @@ public class ShopItemProviderAdapterFactory extends ShopAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fr.logiprolls.ptcompta.shop.CashPayment} instances.
+	 * This keeps track of the one adapter used for all {@link fr.logiprolls.ptcompta.shop.MCashPayment} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -195,7 +195,7 @@ public class ShopItemProviderAdapterFactory extends ShopAdapterFactory implement
 	protected CashPaymentItemProvider cashPaymentItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link fr.logiprolls.ptcompta.shop.CashPayment}.
+	 * This creates an adapter for a {@link fr.logiprolls.ptcompta.shop.MCashPayment}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -210,7 +210,7 @@ public class ShopItemProviderAdapterFactory extends ShopAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fr.logiprolls.ptcompta.shop.ElectronicPayment} instances.
+	 * This keeps track of the one adapter used for all {@link fr.logiprolls.ptcompta.shop.MElectronicPayment} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -218,7 +218,7 @@ public class ShopItemProviderAdapterFactory extends ShopAdapterFactory implement
 	protected ElectronicPaymentItemProvider electronicPaymentItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link fr.logiprolls.ptcompta.shop.ElectronicPayment}.
+	 * This creates an adapter for a {@link fr.logiprolls.ptcompta.shop.MElectronicPayment}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -233,7 +233,7 @@ public class ShopItemProviderAdapterFactory extends ShopAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fr.logiprolls.ptcompta.shop.BankOperation} instances.
+	 * This keeps track of the one adapter used for all {@link fr.logiprolls.ptcompta.shop.MBankOperation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -241,7 +241,7 @@ public class ShopItemProviderAdapterFactory extends ShopAdapterFactory implement
 	protected BankOperationItemProvider bankOperationItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link fr.logiprolls.ptcompta.shop.BankOperation}.
+	 * This creates an adapter for a {@link fr.logiprolls.ptcompta.shop.MBankOperation}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -256,7 +256,7 @@ public class ShopItemProviderAdapterFactory extends ShopAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fr.logiprolls.ptcompta.shop.AccountBook} instances.
+	 * This keeps track of the one adapter used for all {@link fr.logiprolls.ptcompta.shop.MAccountBook} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -264,7 +264,7 @@ public class ShopItemProviderAdapterFactory extends ShopAdapterFactory implement
 	protected AccountBookItemProvider accountBookItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link fr.logiprolls.ptcompta.shop.AccountBook}.
+	 * This creates an adapter for a {@link fr.logiprolls.ptcompta.shop.MAccountBook}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

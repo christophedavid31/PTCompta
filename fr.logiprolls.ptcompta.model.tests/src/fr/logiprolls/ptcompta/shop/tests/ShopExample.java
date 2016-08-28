@@ -2,9 +2,9 @@
  */
 package fr.logiprolls.ptcompta.shop.tests;
 
-import fr.logiprolls.ptcompta.shop.Shop;
-import fr.logiprolls.ptcompta.shop.ShopFactory;
-import fr.logiprolls.ptcompta.shop.ShopPackage;
+import fr.logiprolls.ptcompta.shop.MShop;
+import fr.logiprolls.ptcompta.shop.MShopFactory;
+import fr.logiprolls.ptcompta.shop.MShopPackage;
 import java.io.File;
 import java.io.IOException;
 
@@ -50,8 +50,8 @@ public class ShopExample {
 		// Register the package to ensure it is available during loading.
 		//
 		resourceSet.getPackageRegistry().put
-			(ShopPackage.eNS_URI, 
-			 ShopPackage.eINSTANCE);
+			(MShopPackage.eNS_URI, 
+			 MShopPackage.eINSTANCE);
         
 		// If there are no arguments, emit an appropriate usage message.
 		//
@@ -59,7 +59,7 @@ public class ShopExample {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.shop"));
-				Shop root = ShopFactory.eINSTANCE.createShop();
+				MShop root = MShopFactory.eINSTANCE.createShop();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}

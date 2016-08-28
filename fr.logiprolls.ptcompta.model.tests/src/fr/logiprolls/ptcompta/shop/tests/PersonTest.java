@@ -2,7 +2,7 @@
  */
 package fr.logiprolls.ptcompta.shop.tests;
 
-import fr.logiprolls.ptcompta.shop.Person;
+import fr.logiprolls.ptcompta.shop.MPerson;
 import junit.framework.TestCase;
 
 /**
@@ -12,7 +12,7 @@ import junit.framework.TestCase;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link fr.logiprolls.ptcompta.shop.Person#getDisplayName() <em>Get Display Name</em>}</li>
+ *   <li>{@link fr.logiprolls.ptcompta.shop.MPerson#getDisplayName() <em>Get Display Name</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -25,7 +25,7 @@ public abstract class PersonTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Person fixture = null;
+	protected MPerson fixture = null;
 
 	/**
 	 * Constructs a new Person test case with the given name.
@@ -43,7 +43,7 @@ public abstract class PersonTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(Person fixture) {
+	protected void setFixture(MPerson fixture) {
 		this.fixture = fixture;
 	}
 
@@ -53,15 +53,15 @@ public abstract class PersonTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Person getFixture() {
+	protected MPerson getFixture() {
 		return fixture;
 	}
 
 	/**
-	 * Tests the '{@link fr.logiprolls.ptcompta.shop.Person#getDisplayName() <em>Get Display Name</em>}' operation.
+	 * Tests the '{@link fr.logiprolls.ptcompta.shop.MPerson#getDisplayName() <em>Get Display Name</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see fr.logiprolls.ptcompta.shop.Person#getDisplayName()
+	 * @see fr.logiprolls.ptcompta.shop.MPerson#getDisplayName()
 	 * @generated
 	 */
 	public void testGetDisplayName() {

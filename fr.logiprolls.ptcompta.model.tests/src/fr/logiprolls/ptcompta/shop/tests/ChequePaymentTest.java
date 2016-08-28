@@ -2,8 +2,8 @@
  */
 package fr.logiprolls.ptcompta.shop.tests;
 
-import fr.logiprolls.ptcompta.shop.ChequePayment;
-import fr.logiprolls.ptcompta.shop.ShopFactory;
+import fr.logiprolls.ptcompta.shop.MChequePayment;
+import fr.logiprolls.ptcompta.shop.MShopFactory;
 import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
@@ -22,7 +22,7 @@ public class ChequePaymentTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ChequePayment fixture = null;
+	protected MChequePayment fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -49,7 +49,7 @@ public class ChequePaymentTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(ChequePayment fixture) {
+	protected void setFixture(MChequePayment fixture) {
 		this.fixture = fixture;
 	}
 
@@ -59,7 +59,7 @@ public class ChequePaymentTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ChequePayment getFixture() {
+	protected MChequePayment getFixture() {
 		return fixture;
 	}
 
@@ -71,7 +71,7 @@ public class ChequePaymentTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(ShopFactory.eINSTANCE.createChequePayment());
+		setFixture(MShopFactory.eINSTANCE.createChequePayment());
 	}
 
 	/**

@@ -2,8 +2,8 @@
  */
 package fr.logiprolls.ptcompta.shop.tests;
 
-import fr.logiprolls.ptcompta.shop.AccountBook;
-import fr.logiprolls.ptcompta.shop.ShopFactory;
+import fr.logiprolls.ptcompta.shop.MAccountBook;
+import fr.logiprolls.ptcompta.shop.MShopFactory;
 import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
@@ -15,8 +15,8 @@ import junit.textui.TestRunner;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link fr.logiprolls.ptcompta.shop.AccountBook#depositCash(float, java.util.Date) <em>Deposit Cash</em>}</li>
- *   <li>{@link fr.logiprolls.ptcompta.shop.AccountBook#depositCheques(org.eclipse.emf.common.util.EList, java.util.Date) <em>Deposit Cheques</em>}</li>
+ *   <li>{@link fr.logiprolls.ptcompta.shop.MAccountBook#depositCash(float, java.util.Date) <em>Deposit Cash</em>}</li>
+ *   <li>{@link fr.logiprolls.ptcompta.shop.MAccountBook#depositCheques(org.eclipse.emf.common.util.EList, java.util.Date) <em>Deposit Cheques</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -29,7 +29,7 @@ public class AccountBookTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AccountBook fixture = null;
+	protected MAccountBook fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -56,7 +56,7 @@ public class AccountBookTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(AccountBook fixture) {
+	protected void setFixture(MAccountBook fixture) {
 		this.fixture = fixture;
 	}
 
@@ -66,7 +66,7 @@ public class AccountBookTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AccountBook getFixture() {
+	protected MAccountBook getFixture() {
 		return fixture;
 	}
 
@@ -78,7 +78,7 @@ public class AccountBookTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(ShopFactory.eINSTANCE.createAccountBook());
+		setFixture(MShopFactory.eINSTANCE.createAccountBook());
 	}
 
 	/**
@@ -93,10 +93,10 @@ public class AccountBookTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link fr.logiprolls.ptcompta.shop.AccountBook#depositCash(float, java.util.Date) <em>Deposit Cash</em>}' operation.
+	 * Tests the '{@link fr.logiprolls.ptcompta.shop.MAccountBook#depositCash(float, java.util.Date) <em>Deposit Cash</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see fr.logiprolls.ptcompta.shop.AccountBook#depositCash(float, java.util.Date)
+	 * @see fr.logiprolls.ptcompta.shop.MAccountBook#depositCash(float, java.util.Date)
 	 * @generated
 	 */
 	public void testDepositCash__float_Date() {
@@ -106,10 +106,10 @@ public class AccountBookTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link fr.logiprolls.ptcompta.shop.AccountBook#depositCheques(org.eclipse.emf.common.util.EList, java.util.Date) <em>Deposit Cheques</em>}' operation.
+	 * Tests the '{@link fr.logiprolls.ptcompta.shop.MAccountBook#depositCheques(org.eclipse.emf.common.util.EList, java.util.Date) <em>Deposit Cheques</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see fr.logiprolls.ptcompta.shop.AccountBook#depositCheques(org.eclipse.emf.common.util.EList, java.util.Date)
+	 * @see fr.logiprolls.ptcompta.shop.MAccountBook#depositCheques(org.eclipse.emf.common.util.EList, java.util.Date)
 	 * @generated
 	 */
 	public void testDepositCheques__EList_Date() {

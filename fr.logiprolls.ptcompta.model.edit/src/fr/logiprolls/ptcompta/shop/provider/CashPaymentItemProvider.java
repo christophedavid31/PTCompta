@@ -3,8 +3,8 @@
 package fr.logiprolls.ptcompta.shop.provider;
 
 
-import fr.logiprolls.ptcompta.shop.CashPayment;
-import fr.logiprolls.ptcompta.shop.ShopPackage;
+import fr.logiprolls.ptcompta.shop.MCashPayment;
+import fr.logiprolls.ptcompta.shop.MShopPackage;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -26,7 +26,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link fr.logiprolls.ptcompta.shop.CashPayment} object.
+ * This is the item provider adapter for a {@link fr.logiprolls.ptcompta.shop.MCashPayment} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
@@ -80,7 +80,7 @@ public class CashPaymentItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Valuable_date_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Valuable_date_feature", "_UI_Valuable_type"),
-				 ShopPackage.Literals.VALUABLE__DATE,
+				 MShopPackage.Literals.VALUABLE__DATE,
 				 true,
 				 false,
 				 false,
@@ -102,7 +102,7 @@ public class CashPaymentItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Valuable_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Valuable_value_feature", "_UI_Valuable_type"),
-				 ShopPackage.Literals.VALUABLE__VALUE,
+				 MShopPackage.Literals.VALUABLE__VALUE,
 				 true,
 				 false,
 				 false,
@@ -124,7 +124,7 @@ public class CashPaymentItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Payment_sale_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Payment_sale_feature", "_UI_Payment_type"),
-				 ShopPackage.Literals.PAYMENT__SALE,
+				 MShopPackage.Literals.PAYMENT__SALE,
 				 true,
 				 false,
 				 true,
@@ -152,7 +152,7 @@ public class CashPaymentItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Date labelValue = ((CashPayment)object).getDate();
+		Date labelValue = ((MCashPayment)object).getDate();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_CashPayment_type") :
@@ -171,9 +171,9 @@ public class CashPaymentItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(CashPayment.class)) {
-			case ShopPackage.CASH_PAYMENT__DATE:
-			case ShopPackage.CASH_PAYMENT__VALUE:
+		switch (notification.getFeatureID(MCashPayment.class)) {
+			case MShopPackage.CASH_PAYMENT__DATE:
+			case MShopPackage.CASH_PAYMENT__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

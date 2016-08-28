@@ -2,28 +2,27 @@
  */
 package fr.logiprolls.ptcompta.shop.impl;
 
-import fr.logiprolls.ptcompta.shop.AccountBook;
-import fr.logiprolls.ptcompta.shop.BankOperation;
-import fr.logiprolls.ptcompta.shop.CashPayment;
-import fr.logiprolls.ptcompta.shop.ChequePayment;
-import fr.logiprolls.ptcompta.shop.Customer;
-import fr.logiprolls.ptcompta.shop.ElectronicPayment;
-import fr.logiprolls.ptcompta.shop.Employee;
-import fr.logiprolls.ptcompta.shop.Payment;
-import fr.logiprolls.ptcompta.shop.Person;
-import fr.logiprolls.ptcompta.shop.Sale;
-import fr.logiprolls.ptcompta.shop.Shop;
-import fr.logiprolls.ptcompta.shop.ShopFactory;
-import fr.logiprolls.ptcompta.shop.ShopPackage;
-import fr.logiprolls.ptcompta.shop.Valuable;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import fr.logiprolls.ptcompta.shop.MAccountBook;
+import fr.logiprolls.ptcompta.shop.MBankOperation;
+import fr.logiprolls.ptcompta.shop.MCashPayment;
+import fr.logiprolls.ptcompta.shop.MChequePayment;
+import fr.logiprolls.ptcompta.shop.MCustomer;
+import fr.logiprolls.ptcompta.shop.MElectronicPayment;
+import fr.logiprolls.ptcompta.shop.MEmployee;
+import fr.logiprolls.ptcompta.shop.MPayment;
+import fr.logiprolls.ptcompta.shop.MPerson;
+import fr.logiprolls.ptcompta.shop.MSale;
+import fr.logiprolls.ptcompta.shop.MShop;
+import fr.logiprolls.ptcompta.shop.MShopFactory;
+import fr.logiprolls.ptcompta.shop.MShopPackage;
+import fr.logiprolls.ptcompta.shop.MValuable;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +30,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ShopPackageImpl extends EPackageImpl implements ShopPackage {
+public class MShopPackageImpl extends EPackageImpl implements MShopPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -127,12 +126,12 @@ public class ShopPackageImpl extends EPackageImpl implements ShopPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see fr.logiprolls.ptcompta.shop.ShopPackage#eNS_URI
+	 * @see fr.logiprolls.ptcompta.shop.MShopPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private ShopPackageImpl() {
-		super(eNS_URI, ShopFactory.eINSTANCE);
+	private MShopPackageImpl() {
+		super(eNS_URI, MShopFactory.eINSTANCE);
 	}
 
 	/**
@@ -145,7 +144,7 @@ public class ShopPackageImpl extends EPackageImpl implements ShopPackage {
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
-	 * <p>This method is used to initialize {@link ShopPackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link MShopPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -154,11 +153,11 @@ public class ShopPackageImpl extends EPackageImpl implements ShopPackage {
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static ShopPackage init() {
-		if (isInited) return (ShopPackage)EPackage.Registry.INSTANCE.getEPackage(ShopPackage.eNS_URI);
+	public static MShopPackage init() {
+		if (isInited) return (MShopPackage)EPackage.Registry.INSTANCE.getEPackage(MShopPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ShopPackageImpl theShopPackage = (ShopPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ShopPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ShopPackageImpl());
+		MShopPackageImpl theShopPackage = (MShopPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof MShopPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new MShopPackageImpl());
 
 		isInited = true;
 
@@ -173,7 +172,7 @@ public class ShopPackageImpl extends EPackageImpl implements ShopPackage {
 
   
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(ShopPackage.eNS_URI, theShopPackage);
+		EPackage.Registry.INSTANCE.put(MShopPackage.eNS_URI, theShopPackage);
 		return theShopPackage;
 	}
 
@@ -551,8 +550,8 @@ public class ShopPackageImpl extends EPackageImpl implements ShopPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ShopFactory getShopFactory() {
-		return (ShopFactory)getEFactoryInstance();
+	public MShopFactory getShopFactory() {
+		return (MShopFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -666,57 +665,57 @@ public class ShopPackageImpl extends EPackageImpl implements ShopPackage {
 		bankOperationEClass.getESuperTypes().add(this.getValuable());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(shopEClass, Shop.class, "Shop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getShop_Customers(), this.getCustomer(), null, "customers", null, 0, -1, Shop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getShop_Sales(), this.getSale(), null, "sales", null, 0, -1, Shop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getShop_Employees(), this.getEmployee(), null, "employees", null, 0, -1, Shop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getShop_AccountBook(), this.getAccountBook(), this.getAccountBook_Shop(), "accountBook", null, 1, 1, Shop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(shopEClass, MShop.class, "Shop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getShop_Customers(), this.getCustomer(), null, "customers", null, 0, -1, MShop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getShop_Sales(), this.getSale(), null, "sales", null, 0, -1, MShop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getShop_Employees(), this.getEmployee(), null, "employees", null, 0, -1, MShop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getShop_AccountBook(), this.getAccountBook(), this.getAccountBook_Shop(), "accountBook", null, 1, 1, MShop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(customerEClass, Customer.class, "Customer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCustomer_Sales(), this.getSale(), this.getSale_Customer(), "sales", null, 0, -1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(customerEClass, MCustomer.class, "Customer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCustomer_Sales(), this.getSale(), this.getSale_Customer(), "sales", null, 0, -1, MCustomer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(saleEClass, Sale.class, "Sale", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSale_Description(), ecorePackage.getEString(), "description", null, 0, 1, Sale.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSale_Customer(), this.getCustomer(), this.getCustomer_Sales(), "customer", null, 1, 1, Sale.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSale_Employees(), this.getEmployee(), this.getEmployee_Sales(), "employees", null, 1, -1, Sale.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSale_Payments(), this.getPayment(), this.getPayment_Sale(), "payments", null, 0, -1, Sale.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(saleEClass, MSale.class, "Sale", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSale_Description(), ecorePackage.getEString(), "description", null, 0, 1, MSale.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSale_Customer(), this.getCustomer(), this.getCustomer_Sales(), "customer", null, 1, 1, MSale.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSale_Employees(), this.getEmployee(), this.getEmployee_Sales(), "employees", null, 1, -1, MSale.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSale_Payments(), this.getPayment(), this.getPayment_Sale(), "payments", null, 0, -1, MSale.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(employeeEClass, Employee.class, "Employee", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEmployee_Sales(), this.getSale(), this.getSale_Employees(), "sales", null, 0, -1, Employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(employeeEClass, MEmployee.class, "Employee", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEmployee_Sales(), this.getSale(), this.getSale_Employees(), "sales", null, 0, -1, MEmployee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(personEClass, Person.class, "Person", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPerson_FirstName(), ecorePackage.getEString(), "firstName", null, 1, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPerson_LastName(), ecorePackage.getEString(), "lastName", null, 1, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPerson_BirthDate(), ecorePackage.getEDate(), "birthDate", null, 0, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPerson_PhoneNumbers(), ecorePackage.getEString(), "phoneNumbers", null, 0, -1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPerson_Address(), ecorePackage.getEString(), "address", null, 0, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPerson_Emails(), ecorePackage.getEString(), "emails", null, 0, -1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(personEClass, MPerson.class, "Person", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPerson_FirstName(), ecorePackage.getEString(), "firstName", null, 1, 1, MPerson.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPerson_LastName(), ecorePackage.getEString(), "lastName", null, 1, 1, MPerson.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPerson_BirthDate(), ecorePackage.getEDate(), "birthDate", null, 0, 1, MPerson.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPerson_PhoneNumbers(), ecorePackage.getEString(), "phoneNumbers", null, 0, -1, MPerson.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPerson_Address(), ecorePackage.getEString(), "address", null, 0, 1, MPerson.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPerson_Emails(), ecorePackage.getEString(), "emails", null, 0, -1, MPerson.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getPerson__GetDisplayName(), ecorePackage.getEString(), "getDisplayName", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(paymentEClass, Payment.class, "Payment", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPayment_Sale(), this.getSale(), this.getSale_Payments(), "sale", null, 0, 1, Payment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(paymentEClass, MPayment.class, "Payment", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPayment_Sale(), this.getSale(), this.getSale_Payments(), "sale", null, 0, 1, MPayment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(valuableEClass, Valuable.class, "Valuable", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getValuable_Date(), ecorePackage.getEDate(), "date", null, 0, 1, Valuable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getValuable_Value(), ecorePackage.getEFloat(), "value", null, 1, 1, Valuable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(valuableEClass, MValuable.class, "Valuable", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getValuable_Date(), ecorePackage.getEDate(), "date", null, 0, 1, MValuable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getValuable_Value(), ecorePackage.getEFloat(), "value", null, 1, 1, MValuable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(chequePaymentEClass, ChequePayment.class, "ChequePayment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getChequePayment_Deposited(), ecorePackage.getEBoolean(), "deposited", null, 0, 1, ChequePayment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getChequePayment_DepositDate(), ecorePackage.getEDate(), "depositDate", null, 0, 1, ChequePayment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(chequePaymentEClass, MChequePayment.class, "ChequePayment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getChequePayment_Deposited(), ecorePackage.getEBoolean(), "deposited", null, 0, 1, MChequePayment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getChequePayment_DepositDate(), ecorePackage.getEDate(), "depositDate", null, 0, 1, MChequePayment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(cashPaymentEClass, CashPayment.class, "CashPayment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(cashPaymentEClass, MCashPayment.class, "CashPayment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(electronicPaymentEClass, ElectronicPayment.class, "ElectronicPayment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(electronicPaymentEClass, MElectronicPayment.class, "ElectronicPayment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(bankOperationEClass, BankOperation.class, "BankOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBankOperation_Description(), ecorePackage.getEString(), "description", null, 0, 1, BankOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(bankOperationEClass, MBankOperation.class, "BankOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBankOperation_Description(), ecorePackage.getEString(), "description", null, 0, 1, MBankOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(accountBookEClass, AccountBook.class, "AccountBook", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAccountBook_BankOperations(), this.getBankOperation(), null, "bankOperations", null, 0, -1, AccountBook.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAccountBook_CashFlow(), ecorePackage.getEFloat(), "cashFlow", null, 0, 1, AccountBook.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAccountBook_Shop(), this.getShop(), this.getShop_AccountBook(), "shop", null, 1, 1, AccountBook.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAccountBook_Payments(), this.getPayment(), null, "payments", null, 0, -1, AccountBook.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(accountBookEClass, MAccountBook.class, "AccountBook", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAccountBook_BankOperations(), this.getBankOperation(), null, "bankOperations", null, 0, -1, MAccountBook.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAccountBook_CashFlow(), ecorePackage.getEFloat(), "cashFlow", null, 0, 1, MAccountBook.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAccountBook_Shop(), this.getShop(), this.getShop_AccountBook(), "shop", null, 1, 1, MAccountBook.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAccountBook_Payments(), this.getPayment(), null, "payments", null, 0, -1, MAccountBook.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = initEOperation(getAccountBook__DepositCash__float_Date(), null, "depositCash", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEFloat(), "cashValue", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -730,4 +729,4 @@ public class ShopPackageImpl extends EPackageImpl implements ShopPackage {
 		createResource(eNS_URI);
 	}
 
-} //ShopPackageImpl
+} //MShopPackageImpl

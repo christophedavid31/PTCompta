@@ -2,8 +2,8 @@
  */
 package fr.logiprolls.ptcompta.shop.tests;
 
-import fr.logiprolls.ptcompta.shop.BankOperation;
-import fr.logiprolls.ptcompta.shop.ShopFactory;
+import fr.logiprolls.ptcompta.shop.MBankOperation;
+import fr.logiprolls.ptcompta.shop.MShopFactory;
 import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
@@ -22,7 +22,7 @@ public class BankOperationTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BankOperation fixture = null;
+	protected MBankOperation fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -49,7 +49,7 @@ public class BankOperationTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(BankOperation fixture) {
+	protected void setFixture(MBankOperation fixture) {
 		this.fixture = fixture;
 	}
 
@@ -59,7 +59,7 @@ public class BankOperationTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BankOperation getFixture() {
+	protected MBankOperation getFixture() {
 		return fixture;
 	}
 
@@ -71,7 +71,7 @@ public class BankOperationTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(ShopFactory.eINSTANCE.createBankOperation());
+		setFixture(MShopFactory.eINSTANCE.createBankOperation());
 	}
 
 	/**

@@ -1,17 +1,7 @@
-/**
- */
 package fr.logiprolls.ptcompta.shop;
 
+// This interface overrides the generated interface and will be returned by factory
+public interface ElectronicPayment extends MElectronicPayment
+{
 
-/**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Electronic Payment</b></em>'.
- * <!-- end-user-doc -->
- *
- *
- * @see fr.logiprolls.ptcompta.shop.ShopPackage#getElectronicPayment()
- * @model
- * @generated
- */
-public interface ElectronicPayment extends Payment {
-} // ElectronicPayment
+}

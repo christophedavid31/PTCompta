@@ -1,114 +1,23 @@
-/**
- */
 package fr.logiprolls.ptcompta.shop;
 
-import org.eclipse.emf.ecore.EFactory;
+import fr.logiprolls.ptcompta.shop.impl.ShopFactoryImpl;
 
-/**
- * <!-- begin-user-doc -->
- * The <b>Factory</b> for the model.
- * It provides a create method for each non-abstract class of the model.
- * <!-- end-user-doc -->
- * @see fr.logiprolls.ptcompta.shop.ShopPackage
- * @generated
- */
-public interface ShopFactory extends EFactory {
-	/**
-	 * The singleton instance of the factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	ShopFactory eINSTANCE = fr.logiprolls.ptcompta.shop.impl.ShopFactoryImpl.init();
-
-	/**
-	 * Returns a new object of class '<em>Shop</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Shop</em>'.
-	 * @generated
-	 */
-	Shop createShop();
-
-	/**
-	 * Returns a new object of class '<em>Customer</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Customer</em>'.
-	 * @generated
-	 */
-	Customer createCustomer();
-
-	/**
-	 * Returns a new object of class '<em>Sale</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Sale</em>'.
-	 * @generated
-	 */
-	Sale createSale();
-
-	/**
-	 * Returns a new object of class '<em>Employee</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Employee</em>'.
-	 * @generated
-	 */
-	Employee createEmployee();
-
-	/**
-	 * Returns a new object of class '<em>Cheque Payment</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Cheque Payment</em>'.
-	 * @generated
-	 */
-	ChequePayment createChequePayment();
-
-	/**
-	 * Returns a new object of class '<em>Cash Payment</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Cash Payment</em>'.
-	 * @generated
-	 */
-	CashPayment createCashPayment();
-
-	/**
-	 * Returns a new object of class '<em>Electronic Payment</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Electronic Payment</em>'.
-	 * @generated
-	 */
-	ElectronicPayment createElectronicPayment();
-
-	/**
-	 * Returns a new object of class '<em>Bank Operation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Bank Operation</em>'.
-	 * @generated
-	 */
-	BankOperation createBankOperation();
-
-	/**
-	 * Returns a new object of class '<em>Account Book</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Account Book</em>'.
-	 * @generated
-	 */
-	AccountBook createAccountBook();
-
-	/**
-	 * Returns the package supported by this factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the package supported by this factory.
-	 * @generated
-	 */
-	ShopPackage getShopPackage();
-
-} //ShopFactory
+/** This factory  overrides the generated factory and returns the new generated interfaces */
+public interface ShopFactory extends MShopFactory 
+{
+	
+	/** Specialize the eINSTANCE initialization with the new interface type 
+	  * (overridden in the override_factory extension)
+	*/
+	ShopFactory eINSTANCE = ShopFactoryImpl.init();
+				
+	public Shop createShop();
+	public Customer createCustomer();
+	public Sale createSale();
+	public Employee createEmployee();
+	public ChequePayment createChequePayment();
+	public CashPayment createCashPayment();
+	public ElectronicPayment createElectronicPayment();
+	public BankOperation createBankOperation();
+	public AccountBook createAccountBook();
+}

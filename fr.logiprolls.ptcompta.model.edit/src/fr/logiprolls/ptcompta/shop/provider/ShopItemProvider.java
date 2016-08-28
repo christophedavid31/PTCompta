@@ -3,9 +3,9 @@
 package fr.logiprolls.ptcompta.shop.provider;
 
 
-import fr.logiprolls.ptcompta.shop.Shop;
-import fr.logiprolls.ptcompta.shop.ShopFactory;
-import fr.logiprolls.ptcompta.shop.ShopPackage;
+import fr.logiprolls.ptcompta.shop.MShop;
+import fr.logiprolls.ptcompta.shop.MShopFactory;
+import fr.logiprolls.ptcompta.shop.MShopPackage;
 import java.util.Collection;
 import java.util.List;
 
@@ -27,7 +27,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link fr.logiprolls.ptcompta.shop.Shop} object.
+ * This is the item provider adapter for a {@link fr.logiprolls.ptcompta.shop.MShop} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
@@ -79,7 +79,7 @@ public class ShopItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Shop_accountBook_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Shop_accountBook_feature", "_UI_Shop_type"),
-				 ShopPackage.Literals.SHOP__ACCOUNT_BOOK,
+				 MShopPackage.Literals.SHOP__ACCOUNT_BOOK,
 				 true,
 				 false,
 				 true,
@@ -100,10 +100,10 @@ public class ShopItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ShopPackage.Literals.SHOP__CUSTOMERS);
-			childrenFeatures.add(ShopPackage.Literals.SHOP__SALES);
-			childrenFeatures.add(ShopPackage.Literals.SHOP__EMPLOYEES);
-			childrenFeatures.add(ShopPackage.Literals.SHOP__ACCOUNT_BOOK);
+			childrenFeatures.add(MShopPackage.Literals.SHOP__CUSTOMERS);
+			childrenFeatures.add(MShopPackage.Literals.SHOP__SALES);
+			childrenFeatures.add(MShopPackage.Literals.SHOP__EMPLOYEES);
+			childrenFeatures.add(MShopPackage.Literals.SHOP__ACCOUNT_BOOK);
 		}
 		return childrenFeatures;
 	}
@@ -155,11 +155,11 @@ public class ShopItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Shop.class)) {
-			case ShopPackage.SHOP__CUSTOMERS:
-			case ShopPackage.SHOP__SALES:
-			case ShopPackage.SHOP__EMPLOYEES:
-			case ShopPackage.SHOP__ACCOUNT_BOOK:
+		switch (notification.getFeatureID(MShop.class)) {
+			case MShopPackage.SHOP__CUSTOMERS:
+			case MShopPackage.SHOP__SALES:
+			case MShopPackage.SHOP__EMPLOYEES:
+			case MShopPackage.SHOP__ACCOUNT_BOOK:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -179,23 +179,23 @@ public class ShopItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ShopPackage.Literals.SHOP__CUSTOMERS,
-				 ShopFactory.eINSTANCE.createCustomer()));
+				(MShopPackage.Literals.SHOP__CUSTOMERS,
+				 MShopFactory.eINSTANCE.createCustomer()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ShopPackage.Literals.SHOP__SALES,
-				 ShopFactory.eINSTANCE.createSale()));
+				(MShopPackage.Literals.SHOP__SALES,
+				 MShopFactory.eINSTANCE.createSale()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ShopPackage.Literals.SHOP__EMPLOYEES,
-				 ShopFactory.eINSTANCE.createEmployee()));
+				(MShopPackage.Literals.SHOP__EMPLOYEES,
+				 MShopFactory.eINSTANCE.createEmployee()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ShopPackage.Literals.SHOP__ACCOUNT_BOOK,
-				 ShopFactory.eINSTANCE.createAccountBook()));
+				(MShopPackage.Literals.SHOP__ACCOUNT_BOOK,
+				 MShopFactory.eINSTANCE.createAccountBook()));
 	}
 
 	/**

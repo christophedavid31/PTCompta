@@ -2,7 +2,7 @@
  */
 package fr.logiprolls.ptcompta.shop.tests;
 
-import fr.logiprolls.ptcompta.shop.Valuable;
+import fr.logiprolls.ptcompta.shop.MValuable;
 import junit.framework.TestCase;
 
 /**
@@ -19,7 +19,7 @@ public abstract class ValuableTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Valuable fixture = null;
+	protected MValuable fixture = null;
 
 	/**
 	 * Constructs a new Valuable test case with the given name.
@@ -37,7 +37,7 @@ public abstract class ValuableTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(Valuable fixture) {
+	protected void setFixture(MValuable fixture) {
 		this.fixture = fixture;
 	}
 
@@ -47,7 +47,7 @@ public abstract class ValuableTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Valuable getFixture() {
+	protected MValuable getFixture() {
 		return fixture;
 	}
 

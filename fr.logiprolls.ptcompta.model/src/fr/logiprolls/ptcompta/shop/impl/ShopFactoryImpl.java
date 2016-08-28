@@ -1,183 +1,79 @@
-/**
- */
 package fr.logiprolls.ptcompta.shop.impl;
-
-import fr.logiprolls.ptcompta.shop.*;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
-
-import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-/**
- * <!-- begin-user-doc -->
- * An implementation of the model <b>Factory</b>.
- * <!-- end-user-doc -->
- * @generated
- */
-public class ShopFactoryImpl extends EFactoryImpl implements ShopFactory {
-	/**
-	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+import fr.logiprolls.ptcompta.shop.AccountBook;
+import fr.logiprolls.ptcompta.shop.BankOperation;
+import fr.logiprolls.ptcompta.shop.CashPayment;
+import fr.logiprolls.ptcompta.shop.ChequePayment;
+import fr.logiprolls.ptcompta.shop.Customer;
+import fr.logiprolls.ptcompta.shop.ElectronicPayment;
+import fr.logiprolls.ptcompta.shop.Employee;
+import fr.logiprolls.ptcompta.shop.Sale;
+import fr.logiprolls.ptcompta.shop.Shop;
+import fr.logiprolls.ptcompta.shop.ShopFactory;
+
+
+// This factory  overrides the generated factory and returns the new generated interfaces
+public class ShopFactoryImpl extends MShopFactoryImpl implements ShopFactory
+{
+	
 	public static ShopFactory init() {
+		
 		try {
-			ShopFactory theShopFactory = (ShopFactory)EPackage.Registry.INSTANCE.getEFactory(ShopPackage.eNS_URI);
-			if (theShopFactory != null) {
-				return theShopFactory;
+			Object fact = MShopFactoryImpl.init();
+			if ((fact != null) && (fact instanceof ShopFactory))
+					return (ShopFactory) fact;
 			}
-		}
 		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
-		return new ShopFactoryImpl();
+		return new ShopFactoryImpl(); 
+		 }
+	
+	public Shop createShop()
+	{
+		Shop result = new ShopImpl();
+		return result;
 	}
-
-	/**
-	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ShopFactoryImpl() {
-		super();
+	public Customer createCustomer()
+	{
+		Customer result = new CustomerImpl();
+		return result;
 	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID()) {
-			case ShopPackage.SHOP: return createShop();
-			case ShopPackage.CUSTOMER: return createCustomer();
-			case ShopPackage.SALE: return createSale();
-			case ShopPackage.EMPLOYEE: return createEmployee();
-			case ShopPackage.CHEQUE_PAYMENT: return createChequePayment();
-			case ShopPackage.CASH_PAYMENT: return createCashPayment();
-			case ShopPackage.ELECTRONIC_PAYMENT: return createElectronicPayment();
-			case ShopPackage.BANK_OPERATION: return createBankOperation();
-			case ShopPackage.ACCOUNT_BOOK: return createAccountBook();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-		}
+	public Sale createSale()
+	{
+		Sale result = new SaleImpl();
+		return result;
 	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Shop createShop() {
-		ShopImpl shop = new ShopImpl();
-		return shop;
+	public Employee createEmployee()
+	{
+		Employee result = new EmployeeImpl();
+		return result;
 	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Customer createCustomer() {
-		CustomerImpl customer = new CustomerImpl();
-		return customer;
+	public ChequePayment createChequePayment()
+	{
+		ChequePayment result = new ChequePaymentImpl();
+		return result;
 	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Sale createSale() {
-		SaleImpl sale = new SaleImpl();
-		return sale;
+	public CashPayment createCashPayment()
+	{
+		CashPayment result = new CashPaymentImpl();
+		return result;
 	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Employee createEmployee() {
-		EmployeeImpl employee = new EmployeeImpl();
-		return employee;
+	public ElectronicPayment createElectronicPayment()
+	{
+		ElectronicPayment result = new ElectronicPaymentImpl();
+		return result;
 	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ChequePayment createChequePayment() {
-		ChequePaymentImpl chequePayment = new ChequePaymentImpl();
-		return chequePayment;
+	public BankOperation createBankOperation()
+	{
+		BankOperation result = new BankOperationImpl();
+		return result;
 	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CashPayment createCashPayment() {
-		CashPaymentImpl cashPayment = new CashPaymentImpl();
-		return cashPayment;
+	public AccountBook createAccountBook()
+	{
+		AccountBook result = new AccountBookImpl();
+		return result;
 	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ElectronicPayment createElectronicPayment() {
-		ElectronicPaymentImpl electronicPayment = new ElectronicPaymentImpl();
-		return electronicPayment;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BankOperation createBankOperation() {
-		BankOperationImpl bankOperation = new BankOperationImpl();
-		return bankOperation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AccountBook createAccountBook() {
-		AccountBookImpl accountBook = new AccountBookImpl();
-		return accountBook;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ShopPackage getShopPackage() {
-		return (ShopPackage)getEPackage();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @deprecated
-	 * @generated
-	 */
-	@Deprecated
-	public static ShopPackage getPackage() {
-		return ShopPackage.eINSTANCE;
-	}
-
-} //ShopFactoryImpl
+}

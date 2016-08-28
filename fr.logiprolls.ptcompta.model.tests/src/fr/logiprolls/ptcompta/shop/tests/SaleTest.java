@@ -2,8 +2,8 @@
  */
 package fr.logiprolls.ptcompta.shop.tests;
 
-import fr.logiprolls.ptcompta.shop.Sale;
-import fr.logiprolls.ptcompta.shop.ShopFactory;
+import fr.logiprolls.ptcompta.shop.MSale;
+import fr.logiprolls.ptcompta.shop.MShopFactory;
 import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
@@ -22,7 +22,7 @@ public class SaleTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Sale fixture = null;
+	protected MSale fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -49,7 +49,7 @@ public class SaleTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(Sale fixture) {
+	protected void setFixture(MSale fixture) {
 		this.fixture = fixture;
 	}
 
@@ -59,7 +59,7 @@ public class SaleTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Sale getFixture() {
+	protected MSale getFixture() {
 		return fixture;
 	}
 
@@ -71,7 +71,7 @@ public class SaleTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(ShopFactory.eINSTANCE.createSale());
+		setFixture(MShopFactory.eINSTANCE.createSale());
 	}
 
 	/**

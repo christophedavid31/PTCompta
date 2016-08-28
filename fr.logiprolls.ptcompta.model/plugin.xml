@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.0"?>
-
-<!--
--->
-
 <plugin>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated shop -->
+   <extension
+         point="org.eclipse.emf.ecore.factory_override">
+      <factory
+            uri="http://www.logiprolls.fr/shop"
+            class="fr.logiprolls.ptcompta.shop.impl.MShopFactoryImpl">
+      </factory>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://www.logiprolls.fr/shop"
-            class="fr.logiprolls.ptcompta.shop.ShopPackage"
-            genModel="model/shop.genmodel"/>
+            class="fr.logiprolls.ptcompta.shop.MShopPackage">
+      </package>
    </extension>
 
 </plugin>

@@ -2,21 +2,31 @@
  */
 package fr.logiprolls.ptcompta.shop.util;
 
-import fr.logiprolls.ptcompta.shop.*;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
+
+import fr.logiprolls.ptcompta.shop.MAccountBook;
+import fr.logiprolls.ptcompta.shop.MBankOperation;
+import fr.logiprolls.ptcompta.shop.MCashPayment;
+import fr.logiprolls.ptcompta.shop.MChequePayment;
+import fr.logiprolls.ptcompta.shop.MCustomer;
+import fr.logiprolls.ptcompta.shop.MElectronicPayment;
+import fr.logiprolls.ptcompta.shop.MEmployee;
+import fr.logiprolls.ptcompta.shop.MPayment;
+import fr.logiprolls.ptcompta.shop.MPerson;
+import fr.logiprolls.ptcompta.shop.MSale;
+import fr.logiprolls.ptcompta.shop.MShop;
+import fr.logiprolls.ptcompta.shop.MShopPackage;
+import fr.logiprolls.ptcompta.shop.MValuable;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see fr.logiprolls.ptcompta.shop.ShopPackage
+ * @see fr.logiprolls.ptcompta.shop.MShopPackage
  * @generated
  */
 public class ShopAdapterFactory extends AdapterFactoryImpl {
@@ -26,7 +36,7 @@ public class ShopAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static ShopPackage modelPackage;
+	protected static MShopPackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -36,7 +46,7 @@ public class ShopAdapterFactory extends AdapterFactoryImpl {
 	 */
 	public ShopAdapterFactory() {
 		if (modelPackage == null) {
-			modelPackage = ShopPackage.eINSTANCE;
+			modelPackage = MShopPackage.eINSTANCE;
 		}
 	}
 
@@ -68,51 +78,51 @@ public class ShopAdapterFactory extends AdapterFactoryImpl {
 	protected ShopSwitch<Adapter> modelSwitch =
 		new ShopSwitch<Adapter>() {
 			@Override
-			public Adapter caseShop(Shop object) {
+			public Adapter caseShop(MShop object) {
 				return createShopAdapter();
 			}
 			@Override
-			public Adapter caseCustomer(Customer object) {
+			public Adapter caseCustomer(MCustomer object) {
 				return createCustomerAdapter();
 			}
 			@Override
-			public Adapter caseSale(Sale object) {
+			public Adapter caseSale(MSale object) {
 				return createSaleAdapter();
 			}
 			@Override
-			public Adapter caseEmployee(Employee object) {
+			public Adapter caseEmployee(MEmployee object) {
 				return createEmployeeAdapter();
 			}
 			@Override
-			public Adapter casePerson(Person object) {
+			public Adapter casePerson(MPerson object) {
 				return createPersonAdapter();
 			}
 			@Override
-			public Adapter casePayment(Payment object) {
+			public Adapter casePayment(MPayment object) {
 				return createPaymentAdapter();
 			}
 			@Override
-			public Adapter caseValuable(Valuable object) {
+			public Adapter caseValuable(MValuable object) {
 				return createValuableAdapter();
 			}
 			@Override
-			public Adapter caseChequePayment(ChequePayment object) {
+			public Adapter caseChequePayment(MChequePayment object) {
 				return createChequePaymentAdapter();
 			}
 			@Override
-			public Adapter caseCashPayment(CashPayment object) {
+			public Adapter caseCashPayment(MCashPayment object) {
 				return createCashPaymentAdapter();
 			}
 			@Override
-			public Adapter caseElectronicPayment(ElectronicPayment object) {
+			public Adapter caseElectronicPayment(MElectronicPayment object) {
 				return createElectronicPaymentAdapter();
 			}
 			@Override
-			public Adapter caseBankOperation(BankOperation object) {
+			public Adapter caseBankOperation(MBankOperation object) {
 				return createBankOperationAdapter();
 			}
 			@Override
-			public Adapter caseAccountBook(AccountBook object) {
+			public Adapter caseAccountBook(MAccountBook object) {
 				return createAccountBookAdapter();
 			}
 			@Override
@@ -136,13 +146,13 @@ public class ShopAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.logiprolls.ptcompta.shop.Shop <em>Shop</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.logiprolls.ptcompta.shop.MShop <em>Shop</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.logiprolls.ptcompta.shop.Shop
+	 * @see fr.logiprolls.ptcompta.shop.MShop
 	 * @generated
 	 */
 	public Adapter createShopAdapter() {
@@ -150,13 +160,13 @@ public class ShopAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.logiprolls.ptcompta.shop.Customer <em>Customer</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.logiprolls.ptcompta.shop.MCustomer <em>Customer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.logiprolls.ptcompta.shop.Customer
+	 * @see fr.logiprolls.ptcompta.shop.MCustomer
 	 * @generated
 	 */
 	public Adapter createCustomerAdapter() {
@@ -164,13 +174,13 @@ public class ShopAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.logiprolls.ptcompta.shop.Sale <em>Sale</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.logiprolls.ptcompta.shop.MSale <em>Sale</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.logiprolls.ptcompta.shop.Sale
+	 * @see fr.logiprolls.ptcompta.shop.MSale
 	 * @generated
 	 */
 	public Adapter createSaleAdapter() {
@@ -178,13 +188,13 @@ public class ShopAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.logiprolls.ptcompta.shop.Employee <em>Employee</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.logiprolls.ptcompta.shop.MEmployee <em>Employee</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.logiprolls.ptcompta.shop.Employee
+	 * @see fr.logiprolls.ptcompta.shop.MEmployee
 	 * @generated
 	 */
 	public Adapter createEmployeeAdapter() {
@@ -192,13 +202,13 @@ public class ShopAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.logiprolls.ptcompta.shop.Person <em>Person</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.logiprolls.ptcompta.shop.MPerson <em>Person</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.logiprolls.ptcompta.shop.Person
+	 * @see fr.logiprolls.ptcompta.shop.MPerson
 	 * @generated
 	 */
 	public Adapter createPersonAdapter() {
@@ -206,13 +216,13 @@ public class ShopAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.logiprolls.ptcompta.shop.Payment <em>Payment</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.logiprolls.ptcompta.shop.MPayment <em>Payment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.logiprolls.ptcompta.shop.Payment
+	 * @see fr.logiprolls.ptcompta.shop.MPayment
 	 * @generated
 	 */
 	public Adapter createPaymentAdapter() {
@@ -220,13 +230,13 @@ public class ShopAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.logiprolls.ptcompta.shop.Valuable <em>Valuable</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.logiprolls.ptcompta.shop.MValuable <em>Valuable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.logiprolls.ptcompta.shop.Valuable
+	 * @see fr.logiprolls.ptcompta.shop.MValuable
 	 * @generated
 	 */
 	public Adapter createValuableAdapter() {
@@ -234,13 +244,13 @@ public class ShopAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.logiprolls.ptcompta.shop.ChequePayment <em>Cheque Payment</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.logiprolls.ptcompta.shop.MChequePayment <em>Cheque Payment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.logiprolls.ptcompta.shop.ChequePayment
+	 * @see fr.logiprolls.ptcompta.shop.MChequePayment
 	 * @generated
 	 */
 	public Adapter createChequePaymentAdapter() {
@@ -248,13 +258,13 @@ public class ShopAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.logiprolls.ptcompta.shop.CashPayment <em>Cash Payment</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.logiprolls.ptcompta.shop.MCashPayment <em>Cash Payment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.logiprolls.ptcompta.shop.CashPayment
+	 * @see fr.logiprolls.ptcompta.shop.MCashPayment
 	 * @generated
 	 */
 	public Adapter createCashPaymentAdapter() {
@@ -262,13 +272,13 @@ public class ShopAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.logiprolls.ptcompta.shop.ElectronicPayment <em>Electronic Payment</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.logiprolls.ptcompta.shop.MElectronicPayment <em>Electronic Payment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.logiprolls.ptcompta.shop.ElectronicPayment
+	 * @see fr.logiprolls.ptcompta.shop.MElectronicPayment
 	 * @generated
 	 */
 	public Adapter createElectronicPaymentAdapter() {
@@ -276,13 +286,13 @@ public class ShopAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.logiprolls.ptcompta.shop.BankOperation <em>Bank Operation</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.logiprolls.ptcompta.shop.MBankOperation <em>Bank Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.logiprolls.ptcompta.shop.BankOperation
+	 * @see fr.logiprolls.ptcompta.shop.MBankOperation
 	 * @generated
 	 */
 	public Adapter createBankOperationAdapter() {
@@ -290,13 +300,13 @@ public class ShopAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.logiprolls.ptcompta.shop.AccountBook <em>Account Book</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.logiprolls.ptcompta.shop.MAccountBook <em>Account Book</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.logiprolls.ptcompta.shop.AccountBook
+	 * @see fr.logiprolls.ptcompta.shop.MAccountBook
 	 * @generated
 	 */
 	public Adapter createAccountBookAdapter() {

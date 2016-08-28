@@ -3,9 +3,9 @@
 package fr.logiprolls.ptcompta.shop.provider;
 
 
-import fr.logiprolls.ptcompta.shop.AccountBook;
-import fr.logiprolls.ptcompta.shop.ShopFactory;
-import fr.logiprolls.ptcompta.shop.ShopPackage;
+import fr.logiprolls.ptcompta.shop.MAccountBook;
+import fr.logiprolls.ptcompta.shop.MShopFactory;
+import fr.logiprolls.ptcompta.shop.MShopPackage;
 import java.util.Collection;
 import java.util.List;
 
@@ -28,7 +28,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link fr.logiprolls.ptcompta.shop.AccountBook} object.
+ * This is the item provider adapter for a {@link fr.logiprolls.ptcompta.shop.MAccountBook} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
@@ -82,7 +82,7 @@ public class AccountBookItemProvider
 				 getResourceLocator(),
 				 getString("_UI_AccountBook_cashFlow_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AccountBook_cashFlow_feature", "_UI_AccountBook_type"),
-				 ShopPackage.Literals.ACCOUNT_BOOK__CASH_FLOW,
+				 MShopPackage.Literals.ACCOUNT_BOOK__CASH_FLOW,
 				 true,
 				 false,
 				 false,
@@ -104,7 +104,7 @@ public class AccountBookItemProvider
 				 getResourceLocator(),
 				 getString("_UI_AccountBook_shop_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AccountBook_shop_feature", "_UI_AccountBook_type"),
-				 ShopPackage.Literals.ACCOUNT_BOOK__SHOP,
+				 MShopPackage.Literals.ACCOUNT_BOOK__SHOP,
 				 true,
 				 false,
 				 true,
@@ -126,7 +126,7 @@ public class AccountBookItemProvider
 				 getResourceLocator(),
 				 getString("_UI_AccountBook_payments_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AccountBook_payments_feature", "_UI_AccountBook_type"),
-				 ShopPackage.Literals.ACCOUNT_BOOK__PAYMENTS,
+				 MShopPackage.Literals.ACCOUNT_BOOK__PAYMENTS,
 				 true,
 				 false,
 				 true,
@@ -147,7 +147,7 @@ public class AccountBookItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ShopPackage.Literals.ACCOUNT_BOOK__BANK_OPERATIONS);
+			childrenFeatures.add(MShopPackage.Literals.ACCOUNT_BOOK__BANK_OPERATIONS);
 		}
 		return childrenFeatures;
 	}
@@ -184,7 +184,7 @@ public class AccountBookItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		AccountBook accountBook = (AccountBook)object;
+		MAccountBook accountBook = (MAccountBook)object;
 		return getString("_UI_AccountBook_type") + " " + accountBook.getCashFlow();
 	}
 	
@@ -200,11 +200,11 @@ public class AccountBookItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(AccountBook.class)) {
-			case ShopPackage.ACCOUNT_BOOK__CASH_FLOW:
+		switch (notification.getFeatureID(MAccountBook.class)) {
+			case MShopPackage.ACCOUNT_BOOK__CASH_FLOW:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ShopPackage.ACCOUNT_BOOK__BANK_OPERATIONS:
+			case MShopPackage.ACCOUNT_BOOK__BANK_OPERATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -224,8 +224,8 @@ public class AccountBookItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ShopPackage.Literals.ACCOUNT_BOOK__BANK_OPERATIONS,
-				 ShopFactory.eINSTANCE.createBankOperation()));
+				(MShopPackage.Literals.ACCOUNT_BOOK__BANK_OPERATIONS,
+				 MShopFactory.eINSTANCE.createBankOperation()));
 	}
 
 	/**

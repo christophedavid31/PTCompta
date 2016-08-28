@@ -2,12 +2,23 @@
  */
 package fr.logiprolls.ptcompta.shop.util;
 
-import fr.logiprolls.ptcompta.shop.*;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
+
+import fr.logiprolls.ptcompta.shop.MAccountBook;
+import fr.logiprolls.ptcompta.shop.MBankOperation;
+import fr.logiprolls.ptcompta.shop.MCashPayment;
+import fr.logiprolls.ptcompta.shop.MChequePayment;
+import fr.logiprolls.ptcompta.shop.MCustomer;
+import fr.logiprolls.ptcompta.shop.MElectronicPayment;
+import fr.logiprolls.ptcompta.shop.MEmployee;
+import fr.logiprolls.ptcompta.shop.MPayment;
+import fr.logiprolls.ptcompta.shop.MPerson;
+import fr.logiprolls.ptcompta.shop.MSale;
+import fr.logiprolls.ptcompta.shop.MShop;
+import fr.logiprolls.ptcompta.shop.MShopPackage;
+import fr.logiprolls.ptcompta.shop.MValuable;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,7 +30,7 @@ import org.eclipse.emf.ecore.util.Switch;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see fr.logiprolls.ptcompta.shop.ShopPackage
+ * @see fr.logiprolls.ptcompta.shop.MShopPackage
  * @generated
  */
 public class ShopSwitch<T> extends Switch<T> {
@@ -29,7 +40,7 @@ public class ShopSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static ShopPackage modelPackage;
+	protected static MShopPackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch.
@@ -39,7 +50,7 @@ public class ShopSwitch<T> extends Switch<T> {
 	 */
 	public ShopSwitch() {
 		if (modelPackage == null) {
-			modelPackage = ShopPackage.eINSTANCE;
+			modelPackage = MShopPackage.eINSTANCE;
 		}
 	}
 
@@ -66,85 +77,85 @@ public class ShopSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case ShopPackage.SHOP: {
-				Shop shop = (Shop)theEObject;
+			case MShopPackage.SHOP: {
+				MShop shop = (MShop)theEObject;
 				T result = caseShop(shop);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ShopPackage.CUSTOMER: {
-				Customer customer = (Customer)theEObject;
+			case MShopPackage.CUSTOMER: {
+				MCustomer customer = (MCustomer)theEObject;
 				T result = caseCustomer(customer);
 				if (result == null) result = casePerson(customer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ShopPackage.SALE: {
-				Sale sale = (Sale)theEObject;
+			case MShopPackage.SALE: {
+				MSale sale = (MSale)theEObject;
 				T result = caseSale(sale);
 				if (result == null) result = caseValuable(sale);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ShopPackage.EMPLOYEE: {
-				Employee employee = (Employee)theEObject;
+			case MShopPackage.EMPLOYEE: {
+				MEmployee employee = (MEmployee)theEObject;
 				T result = caseEmployee(employee);
 				if (result == null) result = casePerson(employee);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ShopPackage.PERSON: {
-				Person person = (Person)theEObject;
+			case MShopPackage.PERSON: {
+				MPerson person = (MPerson)theEObject;
 				T result = casePerson(person);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ShopPackage.PAYMENT: {
-				Payment payment = (Payment)theEObject;
+			case MShopPackage.PAYMENT: {
+				MPayment payment = (MPayment)theEObject;
 				T result = casePayment(payment);
 				if (result == null) result = caseValuable(payment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ShopPackage.VALUABLE: {
-				Valuable valuable = (Valuable)theEObject;
+			case MShopPackage.VALUABLE: {
+				MValuable valuable = (MValuable)theEObject;
 				T result = caseValuable(valuable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ShopPackage.CHEQUE_PAYMENT: {
-				ChequePayment chequePayment = (ChequePayment)theEObject;
+			case MShopPackage.CHEQUE_PAYMENT: {
+				MChequePayment chequePayment = (MChequePayment)theEObject;
 				T result = caseChequePayment(chequePayment);
 				if (result == null) result = casePayment(chequePayment);
 				if (result == null) result = caseValuable(chequePayment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ShopPackage.CASH_PAYMENT: {
-				CashPayment cashPayment = (CashPayment)theEObject;
+			case MShopPackage.CASH_PAYMENT: {
+				MCashPayment cashPayment = (MCashPayment)theEObject;
 				T result = caseCashPayment(cashPayment);
 				if (result == null) result = casePayment(cashPayment);
 				if (result == null) result = caseValuable(cashPayment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ShopPackage.ELECTRONIC_PAYMENT: {
-				ElectronicPayment electronicPayment = (ElectronicPayment)theEObject;
+			case MShopPackage.ELECTRONIC_PAYMENT: {
+				MElectronicPayment electronicPayment = (MElectronicPayment)theEObject;
 				T result = caseElectronicPayment(electronicPayment);
 				if (result == null) result = casePayment(electronicPayment);
 				if (result == null) result = caseValuable(electronicPayment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ShopPackage.BANK_OPERATION: {
-				BankOperation bankOperation = (BankOperation)theEObject;
+			case MShopPackage.BANK_OPERATION: {
+				MBankOperation bankOperation = (MBankOperation)theEObject;
 				T result = caseBankOperation(bankOperation);
 				if (result == null) result = caseValuable(bankOperation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ShopPackage.ACCOUNT_BOOK: {
-				AccountBook accountBook = (AccountBook)theEObject;
+			case MShopPackage.ACCOUNT_BOOK: {
+				MAccountBook accountBook = (MAccountBook)theEObject;
 				T result = caseAccountBook(accountBook);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -164,7 +175,7 @@ public class ShopSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseShop(Shop object) {
+	public T caseShop(MShop object) {
 		return null;
 	}
 
@@ -179,7 +190,7 @@ public class ShopSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCustomer(Customer object) {
+	public T caseCustomer(MCustomer object) {
 		return null;
 	}
 
@@ -194,7 +205,7 @@ public class ShopSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSale(Sale object) {
+	public T caseSale(MSale object) {
 		return null;
 	}
 
@@ -209,7 +220,7 @@ public class ShopSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEmployee(Employee object) {
+	public T caseEmployee(MEmployee object) {
 		return null;
 	}
 
@@ -224,7 +235,7 @@ public class ShopSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePerson(Person object) {
+	public T casePerson(MPerson object) {
 		return null;
 	}
 
@@ -239,7 +250,7 @@ public class ShopSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePayment(Payment object) {
+	public T casePayment(MPayment object) {
 		return null;
 	}
 
@@ -254,7 +265,7 @@ public class ShopSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseValuable(Valuable object) {
+	public T caseValuable(MValuable object) {
 		return null;
 	}
 
@@ -269,7 +280,7 @@ public class ShopSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseChequePayment(ChequePayment object) {
+	public T caseChequePayment(MChequePayment object) {
 		return null;
 	}
 
@@ -284,7 +295,7 @@ public class ShopSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCashPayment(CashPayment object) {
+	public T caseCashPayment(MCashPayment object) {
 		return null;
 	}
 
@@ -299,7 +310,7 @@ public class ShopSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseElectronicPayment(ElectronicPayment object) {
+	public T caseElectronicPayment(MElectronicPayment object) {
 		return null;
 	}
 
@@ -314,7 +325,7 @@ public class ShopSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseBankOperation(BankOperation object) {
+	public T caseBankOperation(MBankOperation object) {
 		return null;
 	}
 
@@ -329,7 +340,7 @@ public class ShopSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAccountBook(AccountBook object) {
+	public T caseAccountBook(MAccountBook object) {
 		return null;
 	}
 

@@ -69,8 +69,8 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ISetSelectionTarget;
 
-import fr.logiprolls.ptcompta.shop.ShopFactory;
-import fr.logiprolls.ptcompta.shop.ShopPackage;
+import fr.logiprolls.ptcompta.shop.MShopFactory;
+import fr.logiprolls.ptcompta.shop.MShopPackage;
 import fr.logiprolls.ptcompta.shop.provider.ShopEditPlugin;
 
 
@@ -116,7 +116,7 @@ public class ShopModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ShopPackage shopPackage = ShopPackage.eINSTANCE;
+	protected MShopPackage shopPackage = MShopPackage.eINSTANCE;
 
 	/**
 	 * This caches an instance of the model factory.
@@ -124,7 +124,7 @@ public class ShopModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ShopFactory shopFactory = shopPackage.getShopFactory();
+	protected MShopFactory shopFactory = shopPackage.getShopFactory();
 
 	/**
 	 * This is the file creation page.
