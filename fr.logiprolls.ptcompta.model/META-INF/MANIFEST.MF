@@ -7,6 +7,7 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Export-Package: fr.logiprolls.ptcompta.shop,
+ fr.logiprolls.ptcompta.shop.helpers,
  fr.logiprolls.ptcompta.shop.impl,
  fr.logiprolls.ptcompta.shop.util
 Require-Bundle: org.eclipse.core.runtime,
