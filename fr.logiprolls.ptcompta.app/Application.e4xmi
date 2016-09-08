@@ -3,9 +3,13 @@
   <children xsi:type="basic:TrimmedWindow" xmi:id="_6wlLccgZEeSyMNYR5xypkQ" elementId="fr.logiprolls.ptcompta.app.window.main" label="Eclipse 4 RCP Application" width="1000" height="800">
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_6wlLkMgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.ide.perspectivestack">
       <children xsi:type="advanced:Perspective" xmi:id="_6wlLkcgZEeSyMNYR5xypkQ" elementId="fr.logiprolls.ptcompta.app.perspective.sample">
-        <children xsi:type="basic:PartSashContainer" xmi:id="_6wlLksgZEeSyMNYR5xypkQ" elementId="fr.logiprolls.ptcompta.app.partsashcontainer.sample">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_6wlLksgZEeSyMNYR5xypkQ" elementId="fr.logiprolls.ptcompta.app.partsashcontainer.sample" horizontal="true">
           <children xsi:type="basic:PartStack" xmi:id="_6wlLk8gZEeSyMNYR5xypkQ" elementId="fr.logiprolls.ptcompta.app.partstack.sample">
-            <children xsi:type="basic:Part" xmi:id="_6wlLlMgZEeSyMNYR5xypkQ" elementId="fr.logiprolls.ptcompta.app.part.sample" contributionURI="bundleclass://fr.logiprolls.ptcompta.app/fr.logiprolls.ptcompta.app.parts.SamplePart" label="Sample Part"/>
+            <children xsi:type="basic:Part" xmi:id="_6wlLlMgZEeSyMNYR5xypkQ" elementId="fr.logiprolls.ptcompta.app.part.sample" toBeRendered="false" contributionURI="bundleclass://fr.logiprolls.ptcompta.app/fr.logiprolls.ptcompta.app.parts.SamplePart" label="Sample Part"/>
+            <children xsi:type="basic:Part" xmi:id="_QRhOcHX4Eea7YK0YH6QfNw" elementId="fr.logiprolls.ptcompta.app.part.saleslist" contributionURI="bundleclass://fr.logiprolls.ptcompta.ui/fr.logiprolls.ptcompta.ui.parts.SalesListPart" label="Sales List"/>
+          </children>
+          <children xsi:type="basic:PartStack" xmi:id="_bbAEUHX4Eea7YK0YH6QfNw" elementId="fr.logiprolls.ptcompta.app.partstack.0">
+            <children xsi:type="basic:Part" xmi:id="_cmqmMHX4Eea7YK0YH6QfNw" elementId="fr.logiprolls.ptcompta.app.part.saleinfo" contributionURI="bundleclass://fr.logiprolls.ptcompta.ui/fr.logiprolls.ptcompta.ui.parts.SaleInfoPart" label="Sale Info"/>
           </children>
         </children>
       </children>
