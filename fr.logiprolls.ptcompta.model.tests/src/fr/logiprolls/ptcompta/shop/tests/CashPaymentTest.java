@@ -4,8 +4,6 @@ package fr.logiprolls.ptcompta.shop.tests;
 
 import fr.logiprolls.ptcompta.shop.MCashPayment;
 import fr.logiprolls.ptcompta.shop.MShopFactory;
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 /**
@@ -14,15 +12,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CashPaymentTest extends TestCase {
-
-	/**
-	 * The fixture for this Cash Payment test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MCashPayment fixture = null;
+public class CashPaymentTest extends PaymentTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -44,23 +34,14 @@ public class CashPaymentTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Cash Payment test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(MCashPayment fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Cash Payment test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected MCashPayment getFixture() {
-		return fixture;
+		return (MCashPayment)fixture;
 	}
 
 	/**

@@ -97,7 +97,7 @@ public static Shop createSampleShop()
     p1.setDate(d1);
     p1.setValue(10.F);
     s1.getPayments().add(p1);
-    Payment p11 = f.createCashPayment();
+    Payment p11 = f.createElectronicPayment();
     p11.setDate(d1);
     p11.setValue(20.F);
     s1.getPayments().add(p11);

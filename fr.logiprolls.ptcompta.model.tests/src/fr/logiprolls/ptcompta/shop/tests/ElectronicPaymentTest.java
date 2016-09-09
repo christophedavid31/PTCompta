@@ -4,8 +4,6 @@ package fr.logiprolls.ptcompta.shop.tests;
 
 import fr.logiprolls.ptcompta.shop.MElectronicPayment;
 import fr.logiprolls.ptcompta.shop.MShopFactory;
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 /**
@@ -14,15 +12,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ElectronicPaymentTest extends TestCase {
-
-	/**
-	 * The fixture for this Electronic Payment test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MElectronicPayment fixture = null;
+public class ElectronicPaymentTest extends PaymentTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -44,23 +34,14 @@ public class ElectronicPaymentTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Electronic Payment test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(MElectronicPayment fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Electronic Payment test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected MElectronicPayment getFixture() {
-		return fixture;
+		return (MElectronicPayment)fixture;
 	}
 
 	/**

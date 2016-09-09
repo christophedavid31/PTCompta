@@ -4,6 +4,7 @@ package fr.logiprolls.ptcompta.shop.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -23,6 +24,7 @@ import fr.logiprolls.ptcompta.shop.MShop;
 import fr.logiprolls.ptcompta.shop.MShopFactory;
 import fr.logiprolls.ptcompta.shop.MShopPackage;
 import fr.logiprolls.ptcompta.shop.MValuable;
+import fr.logiprolls.ptcompta.shop.PaymentType;
 
 /**
  * <!-- begin-user-doc -->
@@ -114,6 +116,13 @@ public class MShopPackageImpl extends EPackageImpl implements MShopPackage {
 	 * @generated
 	 */
 	private EClass accountBookEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum paymentTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -397,6 +406,15 @@ public class MShopPackageImpl extends EPackageImpl implements MShopPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getPayment_Type() {
+		return (EAttribute)paymentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getValuable() {
 		return valuableEClass;
 	}
@@ -550,6 +568,15 @@ public class MShopPackageImpl extends EPackageImpl implements MShopPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getPaymentType() {
+		return paymentTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MShopFactory getShopFactory() {
 		return (MShopFactory)getEFactoryInstance();
 	}
@@ -602,6 +629,7 @@ public class MShopPackageImpl extends EPackageImpl implements MShopPackage {
 
 		paymentEClass = createEClass(PAYMENT);
 		createEReference(paymentEClass, PAYMENT__SALE);
+		createEAttribute(paymentEClass, PAYMENT__TYPE);
 
 		valuableEClass = createEClass(VALUABLE);
 		createEAttribute(valuableEClass, VALUABLE__DATE);
@@ -625,6 +653,9 @@ public class MShopPackageImpl extends EPackageImpl implements MShopPackage {
 		createEReference(accountBookEClass, ACCOUNT_BOOK__PAYMENTS);
 		createEOperation(accountBookEClass, ACCOUNT_BOOK___DEPOSIT_CASH__FLOAT_DATE);
 		createEOperation(accountBookEClass, ACCOUNT_BOOK___DEPOSIT_CHEQUES__ELIST_DATE);
+
+		// Create enums
+		paymentTypeEEnum = createEEnum(PAYMENT_TYPE);
 	}
 
 	/**
@@ -693,8 +724,9 @@ public class MShopPackageImpl extends EPackageImpl implements MShopPackage {
 
 		initEOperation(getPerson__GetDisplayName(), ecorePackage.getEString(), "getDisplayName", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(paymentEClass, MPayment.class, "Payment", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(paymentEClass, MPayment.class, "Payment", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPayment_Sale(), this.getSale(), this.getSale_Payments(), "sale", null, 0, 1, MPayment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPayment_Type(), this.getPaymentType(), "type", null, 0, 1, MPayment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(valuableEClass, MValuable.class, "Valuable", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getValuable_Date(), ecorePackage.getEDate(), "date", null, 0, 1, MValuable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -724,6 +756,12 @@ public class MShopPackageImpl extends EPackageImpl implements MShopPackage {
 		op = initEOperation(getAccountBook__DepositCheques__EList_Date(), null, "depositCheques", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getChequePayment(), "cheques", 0, -1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "date", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(paymentTypeEEnum, PaymentType.class, "PaymentType");
+		addEEnumLiteral(paymentTypeEEnum, PaymentType.CASH);
+		addEEnumLiteral(paymentTypeEEnum, PaymentType.CHEQUE);
+		addEEnumLiteral(paymentTypeEEnum, PaymentType.ELECTRONIC);
 
 		// Create resource
 		createResource(eNS_URI);

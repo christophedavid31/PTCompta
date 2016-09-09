@@ -4,6 +4,7 @@ package fr.logiprolls.ptcompta.shop;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -541,10 +542,10 @@ public interface MShopPackage extends EPackage {
 	int EMPLOYEE_OPERATION_COUNT = PERSON_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link fr.logiprolls.ptcompta.shop.MPayment <em>Payment</em>}' class.
+	 * The meta object id for the '{@link fr.logiprolls.ptcompta.shop.impl.MPaymentImpl <em>Payment</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see fr.logiprolls.ptcompta.shop.MPayment
+	 * @see fr.logiprolls.ptcompta.shop.impl.MPaymentImpl
 	 * @see fr.logiprolls.ptcompta.shop.impl.MShopPackageImpl#getPayment()
 	 * @generated
 	 */
@@ -578,13 +579,22 @@ public interface MShopPackage extends EPackage {
 	int PAYMENT__SALE = VALUABLE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT__TYPE = VALUABLE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Payment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_FEATURE_COUNT = VALUABLE_FEATURE_COUNT + 1;
+	int PAYMENT_FEATURE_COUNT = VALUABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Payment</em>' class.
@@ -631,6 +641,15 @@ public interface MShopPackage extends EPackage {
 	 * @ordered
 	 */
 	int CHEQUE_PAYMENT__SALE = PAYMENT__SALE;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHEQUE_PAYMENT__TYPE = PAYMENT__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Deposited</b></em>' attribute.
@@ -706,6 +725,15 @@ public interface MShopPackage extends EPackage {
 	int CASH_PAYMENT__SALE = PAYMENT__SALE;
 
 	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CASH_PAYMENT__TYPE = PAYMENT__TYPE;
+
+	/**
 	 * The number of structural features of the '<em>Cash Payment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -759,6 +787,15 @@ public interface MShopPackage extends EPackage {
 	 * @ordered
 	 */
 	int ELECTRONIC_PAYMENT__SALE = PAYMENT__SALE;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELECTRONIC_PAYMENT__TYPE = PAYMENT__TYPE;
 
 	/**
 	 * The number of structural features of the '<em>Electronic Payment</em>' class.
@@ -914,6 +951,17 @@ public interface MShopPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACCOUNT_BOOK_OPERATION_COUNT = 2;
+
+
+	/**
+	 * The meta object id for the '{@link fr.logiprolls.ptcompta.shop.PaymentType <em>Payment Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.logiprolls.ptcompta.shop.PaymentType
+	 * @see fr.logiprolls.ptcompta.shop.impl.MShopPackageImpl#getPaymentType()
+	 * @generated
+	 */
+	int PAYMENT_TYPE = 12;
 
 
 	/**
@@ -1174,6 +1222,17 @@ public interface MShopPackage extends EPackage {
 	EReference getPayment_Sale();
 
 	/**
+	 * Returns the meta object for the attribute '{@link fr.logiprolls.ptcompta.shop.MPayment#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see fr.logiprolls.ptcompta.shop.MPayment#getType()
+	 * @see #getPayment()
+	 * @generated
+	 */
+	EAttribute getPayment_Type();
+
+	/**
 	 * Returns the meta object for class '{@link fr.logiprolls.ptcompta.shop.MValuable <em>Valuable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1351,6 +1410,16 @@ public interface MShopPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getAccountBook__DepositCheques__EList_Date();
+
+	/**
+	 * Returns the meta object for enum '{@link fr.logiprolls.ptcompta.shop.PaymentType <em>Payment Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Payment Type</em>'.
+	 * @see fr.logiprolls.ptcompta.shop.PaymentType
+	 * @generated
+	 */
+	EEnum getPaymentType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1562,10 +1631,10 @@ public interface MShopPackage extends EPackage {
 		EOperation PERSON___GET_DISPLAY_NAME = eINSTANCE.getPerson__GetDisplayName();
 
 		/**
-		 * The meta object literal for the '{@link fr.logiprolls.ptcompta.shop.MPayment <em>Payment</em>}' class.
+		 * The meta object literal for the '{@link fr.logiprolls.ptcompta.shop.impl.MPaymentImpl <em>Payment</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see fr.logiprolls.ptcompta.shop.MPayment
+		 * @see fr.logiprolls.ptcompta.shop.impl.MPaymentImpl
 		 * @see fr.logiprolls.ptcompta.shop.impl.MShopPackageImpl#getPayment()
 		 * @generated
 		 */
@@ -1578,6 +1647,14 @@ public interface MShopPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PAYMENT__SALE = eINSTANCE.getPayment_Sale();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PAYMENT__TYPE = eINSTANCE.getPayment_Type();
 
 		/**
 		 * The meta object literal for the '{@link fr.logiprolls.ptcompta.shop.MValuable <em>Valuable</em>}' class.
@@ -1726,6 +1803,16 @@ public interface MShopPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ACCOUNT_BOOK___DEPOSIT_CHEQUES__ELIST_DATE = eINSTANCE.getAccountBook__DepositCheques__EList_Date();
+
+		/**
+		 * The meta object literal for the '{@link fr.logiprolls.ptcompta.shop.PaymentType <em>Payment Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.logiprolls.ptcompta.shop.PaymentType
+		 * @see fr.logiprolls.ptcompta.shop.impl.MShopPackageImpl#getPaymentType()
+		 * @generated
+		 */
+		EEnum PAYMENT_TYPE = eINSTANCE.getPaymentType();
 
 	}
 

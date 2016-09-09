@@ -9,6 +9,11 @@
   <foreignModel>shop.ecore</foreignModel>
   <genPackages prefix="Shop" basePackage="fr.logiprolls.ptcompta" disposableProviderFactory="true"
       ecorePackage="shop.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="shop.ecore#//PaymentType">
+      <genEnumLiterals ecoreEnumLiteral="shop.ecore#//PaymentType/CASH"/>
+      <genEnumLiterals ecoreEnumLiteral="shop.ecore#//PaymentType/CHEQUE"/>
+      <genEnumLiterals ecoreEnumLiteral="shop.ecore#//PaymentType/ELECTRONIC"/>
+    </genEnums>
     <genClasses ecoreClass="shop.ecore#//Shop">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference shop.ecore#//Shop/customers"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference shop.ecore#//Shop/sales"/>
@@ -38,6 +43,7 @@
     </genClasses>
     <genClasses ecoreClass="shop.ecore#//Payment">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shop.ecore#//Payment/sale"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shop.ecore#//Payment/type"/>
     </genClasses>
     <genClasses ecoreClass="shop.ecore#//Valuable">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shop.ecore#//Valuable/date"/>

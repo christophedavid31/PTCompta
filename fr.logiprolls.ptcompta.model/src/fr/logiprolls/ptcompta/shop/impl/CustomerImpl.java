@@ -6,4 +6,12 @@ import fr.logiprolls.ptcompta.shop.Customer;
 public class CustomerImpl extends MCustomerImpl implements Customer
 {
 
+	/* (non-Javadoc)
+	 * @see fr.logiprolls.ptcompta.shop.impl.MPersonImpl#toString()
+	 */
+	@Override
+	public String toString() {
+		return this.getDisplayName();
+	}
+
 }
