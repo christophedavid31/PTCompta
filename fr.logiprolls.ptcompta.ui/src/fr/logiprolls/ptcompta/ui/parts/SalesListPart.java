@@ -32,10 +32,15 @@ import fr.logiprolls.ptcompta.shop.Shop;
 
 public class SalesListPart {
 
+	@Inject
+	private Shop shop;
+
 	private IDataProvider bodyDataProvider;
 	private String[] propertyNames;
 	private BodyLayerStack bodyLayer;
 	private Map<String, String> propertyToLabels;
+
+	private NatTable table;
 
 	@Inject
 	public SalesListPart() {
@@ -43,25 +48,31 @@ public class SalesListPart {
 	}
 
 	@PostConstruct
-	public void postConstruct(Composite parent, Shop shop) {
+	public void postConstruct(Composite parent) {
 
+		// Creating the NatTable
 
-		bodyDataProvider = setupBodyDataProvider(shop);
+		// Body
+		bodyDataProvider = setupBodyDataProvider();
 		DefaultColumnHeaderDataProvider colHeaderDataProvider = new DefaultColumnHeaderDataProvider(propertyNames,
 				propertyToLabels);
 		DefaultRowHeaderDataProvider rowHeaderDataProvider = new DefaultRowHeaderDataProvider(bodyDataProvider);
-
 		bodyLayer = new BodyLayerStack(bodyDataProvider);
+
+		// Column headers
 		ColumnHeaderLayerStack columnHeaderLayer = new ColumnHeaderLayerStack(colHeaderDataProvider);
+
+		// Row headers
 		RowHeaderLayerStack rowHeaderLayer = new RowHeaderLayerStack(rowHeaderDataProvider);
+
+		// Corner
 		DefaultCornerDataProvider cornerDataProvider = new DefaultCornerDataProvider(colHeaderDataProvider,
 				rowHeaderDataProvider);
 		CornerLayer cornerLayer = new CornerLayer(new DataLayer(cornerDataProvider), rowHeaderLayer, columnHeaderLayer);
 
-        GridLayer gridLayer = new GridLayer(this.bodyLayer, columnHeaderLayer,
-                rowHeaderLayer, cornerLayer);
-        NatTable natTable = new NatTable(parent, gridLayer);
-
+		// Assembling
+		GridLayer gridLayer = new GridLayer(this.bodyLayer, columnHeaderLayer, rowHeaderLayer, cornerLayer);
+		table = new NatTable(parent, gridLayer);
 
 	}
 
@@ -75,8 +86,12 @@ public class SalesListPart {
 
 	}
 
+	/**
+	 * Distribute sale elements among columns
+	 * @return
+	 */
 	@Inject
-	private IDataProvider setupBodyDataProvider(Shop shop) {
+	private IDataProvider setupBodyDataProvider() {
 
 		this.propertyToLabels = new HashMap<String, String>();
 		this.propertyToLabels.put("customer", "Customer");
@@ -85,7 +100,7 @@ public class SalesListPart {
 		this.propertyToLabels.put("value", "Value");
 		this.propertyToLabels.put("payments", "Payments");
 
-		this.propertyNames = new String[] { "customer", "description", "date", "payments" };
+		this.propertyNames = new String[] { "customer", "description", "date", "value" };
 		return new ListDataProvider(shop.getSales(), new ReflectiveColumnPropertyAccessor(this.propertyNames));
 
 	}
@@ -121,7 +136,7 @@ public class SalesListPart {
 	public class RowHeaderLayerStack extends AbstractLayerTransform {
 
 		public RowHeaderLayerStack(IDataProvider dataProvider) {
-			DataLayer dataLayer = new DataLayer(dataProvider, 50, 20);
+			DataLayer dataLayer = new DataLayer(dataProvider, 70, 20);
 			RowHeaderLayer rowHeaderLayer = new RowHeaderLayer(dataLayer, bodyLayer, bodyLayer.getSelectionLayer());
 			setUnderlyingLayer(rowHeaderLayer);
 		}
