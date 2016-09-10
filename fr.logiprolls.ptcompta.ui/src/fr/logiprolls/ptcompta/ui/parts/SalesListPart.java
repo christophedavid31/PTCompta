@@ -8,7 +8,6 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.eclipse.e4.ui.di.Focus;
-import org.eclipse.e4.ui.di.Persist;
 import org.eclipse.nebula.widgets.nattable.NatTable;
 import org.eclipse.nebula.widgets.nattable.data.IDataProvider;
 import org.eclipse.nebula.widgets.nattable.data.ListDataProvider;
@@ -31,6 +30,9 @@ import org.eclipse.swt.widgets.Composite;
 import fr.logiprolls.ptcompta.shop.Shop;
 
 public class SalesListPart {
+
+	public static final String VIEW_ID = "fr.logiprolls.ptcompta.ui.saleslistpart";
+	public static final String MENU_ID = VIEW_ID + ".menu";
 
 	@Inject
 	private Shop shop;
@@ -78,11 +80,6 @@ public class SalesListPart {
 
 	@Focus
 	public void onFocus() {
-
-	}
-
-	@Persist
-	public void save() {
 
 	}
 
