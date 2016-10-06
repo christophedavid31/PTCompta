@@ -1,12 +1,21 @@
 
 package fr.logiprolls.ptcompta.ui.parts;
 
+import java.io.IOException;
+import java.util.Collections;
 import java.util.Map;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.e4.ui.di.Persist;
+import org.eclipse.e4.ui.model.application.ui.MDirtyable;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.nebula.widgets.nattable.NatTable;
 import org.eclipse.nebula.widgets.nattable.data.IColumnPropertyAccessor;
@@ -17,7 +26,6 @@ import org.eclipse.nebula.widgets.nattable.grid.GridRegion;
 import org.eclipse.nebula.widgets.nattable.layer.DataLayer;
 import org.eclipse.nebula.widgets.nattable.selection.SelectionLayer;
 import org.eclipse.nebula.widgets.nattable.viewport.ViewportLayer;
-import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 
@@ -32,21 +40,47 @@ public class SalesListPart {
 	@Inject
 	private Shop shop;
 
+	@Inject
+	private MDirtyable dirty;
+
 	private IDataProvider bodyDataProvider;
 	private String[] propertyNames;
 	//private BodyLayerStack bodyLayer;
 	private Map<String, String> propertyToLabels;
 
 	private NatTable table;
+	
 
-	@Inject
-	public SalesListPart() {
+	
+	@Persist
+	public void save() {
+        Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+        Map<String, Object> m = reg.getExtensionToFactoryMap();
+        m.put("shop", new XMIResourceFactoryImpl());
 
+        // Obtain a new resource set
+        ResourceSet resSet = new ResourceSetImpl();
+
+        // create a resource
+        Resource resource = resSet.createResource(URI
+                        .createFileURI("/Users/tof/My.shop"));
+        // Get the first model element and cast it to the right type, in my
+        // example everything is hierarchical included in this first node
+        resource.getContents().add(shop);
+
+        // now save the content.
+        try {
+                resource.save(Collections.EMPTY_MAP);
+        } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+        }
 	}
 
 	@PostConstruct
 	public void postConstruct(Composite parent) {
-	    parent.setLayout(new GridLayout());
+		dirty.setDirty(true);
+		parent.setLayout(new GridLayout());
 
 		// Creating the NatTable
 	    propertyNames = new String[] { "customer", "description", "date", "value" };
