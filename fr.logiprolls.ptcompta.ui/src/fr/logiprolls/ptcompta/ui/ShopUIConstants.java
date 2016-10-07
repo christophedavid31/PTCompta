@@ -12,6 +12,8 @@ public interface ShopUIConstants
 	public static final String SHOP_UI_PREF_STORE = PLUGIN_ID + ".preferenceStore";
 	public static final String SHOP_UI_IMG_REGISTRY = PLUGIN_ID + ".imageRegistry";
 
+	public static final String SHOP_MODEL_URI = "Shop/My.shop";
+	
 	// Constants to manage object images in registry. Constant values are path to icons
 	public static final String IMG_CUSTOMER = "icons/Customers.png";
 	public static final String IMG_COLLAPSE_ALL = "icons/collapseall.gif";

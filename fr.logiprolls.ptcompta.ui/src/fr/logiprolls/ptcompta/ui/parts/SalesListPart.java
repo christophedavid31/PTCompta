@@ -40,8 +40,8 @@ public class SalesListPart {
 	@Inject
 	private Shop shop;
 
-	@Inject
-	private MDirtyable dirty;
+//	@Inject
+//	private MDirtyable dirty;
 
 	private IDataProvider bodyDataProvider;
 	private String[] propertyNames;
@@ -52,34 +52,34 @@ public class SalesListPart {
 	
 
 	
-	@Persist
-	public void save() {
-        Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
-        Map<String, Object> m = reg.getExtensionToFactoryMap();
-        m.put("shop", new XMIResourceFactoryImpl());
-
-        // Obtain a new resource set
-        ResourceSet resSet = new ResourceSetImpl();
-
-        // create a resource
-        Resource resource = resSet.createResource(URI
-                        .createFileURI("/Users/tof/My.shop"));
-        // Get the first model element and cast it to the right type, in my
-        // example everything is hierarchical included in this first node
-        resource.getContents().add(shop);
-
-        // now save the content.
-        try {
-                resource.save(Collections.EMPTY_MAP);
-        } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-        }
-	}
+//	@Persist
+//	public void save() {
+//        Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+//        Map<String, Object> m = reg.getExtensionToFactoryMap();
+//        m.put("shop", new XMIResourceFactoryImpl());
+//
+//        // Obtain a new resource set
+//        ResourceSet resSet = new ResourceSetImpl();
+//
+//        // create a resource
+//        Resource resource = resSet.createResource(URI
+//                        .createURI("shop/My.shop"));
+//        // Get the first model element and cast it to the right type, in my
+//        // example everything is hierarchical included in this first node
+//        resource.getContents().add(shop);
+//
+//        // now save the content.
+//        try {
+//                resource.save(Collections.EMPTY_MAP);
+//        } catch (IOException e) {
+//                // TODO Auto-generated catch block
+//                e.printStackTrace();
+//        }
+//	}
 
 	@PostConstruct
 	public void postConstruct(Composite parent) {
-		dirty.setDirty(true);
+//		dirty.setDirty(true);
 		parent.setLayout(new GridLayout());
 
 		// Creating the NatTable
