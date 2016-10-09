@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.eclipse.emf.ecp.view.model:View xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.emf.ecp.view.model="http://org/eclipse/emf/ecp/view/model/170" xmi:id="_-OVKMIy-EeaGh4mGbbdflw" name="AccountBook" ecorePath="/fr.logiprolls.ptcompta.model/model/shop.ecore">
+  <rootEClass href="http://www.logiprolls.fr/shop#//AccountBook"/>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-OW_YIy-EeaGh4mGbbdflw" name="Control bankOperations">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-OW_YYy-EeaGh4mGbbdflw">
+      <domainModelEFeature xsi:type="ecore:EReference" href="http://www.logiprolls.fr/shop#//AccountBook/bankOperations"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-OW_Yoy-EeaGh4mGbbdflw" name="Control cashFlow">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-OW_Y4y-EeaGh4mGbbdflw">
+      <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.logiprolls.fr/shop#//AccountBook/cashFlow"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-OW_ZIy-EeaGh4mGbbdflw" name="Control shop">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-OW_ZYy-EeaGh4mGbbdflw">
+      <domainModelEFeature xsi:type="ecore:EReference" href="http://www.logiprolls.fr/shop#//AccountBook/shop"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-OW_Zoy-EeaGh4mGbbdflw" name="Control payments">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-OW_Z4y-EeaGh4mGbbdflw">
+      <domainModelEFeature xsi:type="ecore:EReference" href="http://www.logiprolls.fr/shop#//AccountBook/payments"/>
+    </domainModelReference>
+  </children>
+</org.eclipse.emf.ecp.view.model:View>

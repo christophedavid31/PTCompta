@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.emf.ecp.view.model.provider.xmi.file">
+<file filePath="viewmodels/Shop.view"/>
+
+      <file
+            filePath="viewmodels/AccountBook.view">
+      </file>
+      <file
+            filePath="viewmodels/BankOperation.view">
+      </file>
+      <file
+            filePath="viewmodels/ElectronicPayment.view">
+      </file>
+      <file
+            filePath="viewmodels/CashPayment.view">
+      </file>
+      <file
+            filePath="viewmodels/ChequePayment.view">
+      </file>
+      <file
+            filePath="viewmodels/Employee.view">
+      </file>
+      <file
+            filePath="viewmodels/Sale.view">
+      </file>
+      <file
+            filePath="viewmodels/Customer.view">
+      </file>
+      <file
+            filePath="viewmodels/Shop.view">
+      </file>
+   </extension>
+
+</plugin>

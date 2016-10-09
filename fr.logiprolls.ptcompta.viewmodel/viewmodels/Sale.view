@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.eclipse.emf.ecp.view.model:View xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.emf.ecp.view.horizontal.model="http://org/eclipse/emf/ecp/view/horizontal/model" xmlns:org.eclipse.emf.ecp.view.model="http://org/eclipse/emf/ecp/view/model/170" xmi:id="_-N8vsIy-EeaGh4mGbbdflw" name="Sale" ecorePath="/fr.logiprolls.ptcompta.model/model/shop.ecore">
+  <rootEClass href="http://www.logiprolls.fr/shop#//Sale"/>
+  <children xsi:type="org.eclipse.emf.ecp.view.horizontal.model:HorizontalLayout" xmi:id="_Ee80kI48EeaGh4mGbbdflw">
+    <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-N990Iy-EeaGh4mGbbdflw" name="Control date">
+      <attachments xsi:type="org.eclipse.emf.ecp.view.model:DateTimeDisplayAttachment" xmi:id="_BrqNkI48EeaGh4mGbbdflw" displayType="DateOnly"/>
+      <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-N990Yy-EeaGh4mGbbdflw">
+        <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.logiprolls.fr/shop#//Valuable/date"/>
+      </domainModelReference>
+    </children>
+    <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-N990oy-EeaGh4mGbbdflw" name="Control value">
+      <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-N9904y-EeaGh4mGbbdflw">
+        <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.logiprolls.fr/shop#//Valuable/value"/>
+      </domainModelReference>
+    </children>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-N991Iy-EeaGh4mGbbdflw" name="Control description">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-N991Yy-EeaGh4mGbbdflw">
+      <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.logiprolls.fr/shop#//Sale/description"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-N-k4Iy-EeaGh4mGbbdflw" name="Control customer">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-N-k4Yy-EeaGh4mGbbdflw">
+      <domainModelEFeature xsi:type="ecore:EReference" href="http://www.logiprolls.fr/shop#//Sale/customer"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-N-k4oy-EeaGh4mGbbdflw" name="Control employees">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-N-k44y-EeaGh4mGbbdflw">
+      <domainModelEFeature xsi:type="ecore:EReference" href="http://www.logiprolls.fr/shop#//Sale/employees"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-N-k5Iy-EeaGh4mGbbdflw" name="Control payments">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-N-k5Yy-EeaGh4mGbbdflw">
+      <domainModelEFeature xsi:type="ecore:EReference" href="http://www.logiprolls.fr/shop#//Sale/payments"/>
+    </domainModelReference>
+  </children>
+</org.eclipse.emf.ecp.view.model:View>

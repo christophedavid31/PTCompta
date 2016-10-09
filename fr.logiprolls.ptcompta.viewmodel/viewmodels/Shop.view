@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.eclipse.emf.ecp.view.model:View xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.emf.ecp.view.model="http://org/eclipse/emf/ecp/view/model/170" xmi:id="_U8ZJUI46EeaGh4mGbbdflw" name="Shop" ecorePath="/fr.logiprolls.ptcompta.model/model/shop.ecore">
+  <rootEClass href="http://www.logiprolls.fr/shop#//Shop"/>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_nb1DoI47EeaGh4mGbbdflw" name="Control sales">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_nb1DoY47EeaGh4mGbbdflw">
+      <domainModelEFeature xsi:type="ecore:EReference" href="http://www.logiprolls.fr/shop#//Shop/sales"/>
+    </domainModelReference>
+  </children>
+</org.eclipse.emf.ecp.view.model:View>

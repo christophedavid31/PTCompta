@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.eclipse.emf.ecp.view.model:View xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.emf.ecp.view.model="http://org/eclipse/emf/ecp/view/model/170" xmi:id="_-ORf0Iy-EeaGh4mGbbdflw" name="BankOperation" ecorePath="/fr.logiprolls.ptcompta.model/model/shop.ecore">
+  <rootEClass href="http://www.logiprolls.fr/shop#//BankOperation"/>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-OTVAIy-EeaGh4mGbbdflw" name="Control date">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-OTVAYy-EeaGh4mGbbdflw">
+      <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.logiprolls.fr/shop#//Valuable/date"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-OTVAoy-EeaGh4mGbbdflw" name="Control value">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-OTVA4y-EeaGh4mGbbdflw">
+      <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.logiprolls.fr/shop#//Valuable/value"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-OTVBIy-EeaGh4mGbbdflw" name="Control description">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-OTVBYy-EeaGh4mGbbdflw">
+      <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.logiprolls.fr/shop#//BankOperation/description"/>
+    </domainModelReference>
+  </children>
+</org.eclipse.emf.ecp.view.model:View>

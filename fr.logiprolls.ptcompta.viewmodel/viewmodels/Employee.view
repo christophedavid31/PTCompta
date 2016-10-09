@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.eclipse.emf.ecp.view.model:View xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.emf.ecp.view.model="http://org/eclipse/emf/ecp/view/model/170" xmi:id="_-OAaEIy-EeaGh4mGbbdflw" name="Employee" ecorePath="/fr.logiprolls.ptcompta.model/model/shop.ecore">
+  <rootEClass href="http://www.logiprolls.fr/shop#//Employee"/>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-OC2UIy-EeaGh4mGbbdflw" name="Control firstName">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-OC2UYy-EeaGh4mGbbdflw">
+      <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.logiprolls.fr/shop#//Person/firstName"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-OC2Uoy-EeaGh4mGbbdflw" name="Control lastName">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-OC2U4y-EeaGh4mGbbdflw">
+      <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.logiprolls.fr/shop#//Person/lastName"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-OC2VIy-EeaGh4mGbbdflw" name="Control birthDate">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-OC2VYy-EeaGh4mGbbdflw">
+      <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.logiprolls.fr/shop#//Person/birthDate"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-OC2Voy-EeaGh4mGbbdflw" name="Control phoneNumbers">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-OC2V4y-EeaGh4mGbbdflw">
+      <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.logiprolls.fr/shop#//Person/phoneNumbers"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-OC2WIy-EeaGh4mGbbdflw" name="Control address">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-OC2WYy-EeaGh4mGbbdflw">
+      <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.logiprolls.fr/shop#//Person/address"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-OC2Woy-EeaGh4mGbbdflw" name="Control emails">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-OC2W4y-EeaGh4mGbbdflw">
+      <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.logiprolls.fr/shop#//Person/emails"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-OC2XIy-EeaGh4mGbbdflw" name="Control sales">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-OC2XYy-EeaGh4mGbbdflw">
+      <domainModelEFeature xsi:type="ecore:EReference" href="http://www.logiprolls.fr/shop#//Employee/sales"/>
+    </domainModelReference>
+  </children>
+</org.eclipse.emf.ecp.view.model:View>
