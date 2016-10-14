@@ -5,7 +5,7 @@
          point="org.eclipse.core.runtime.adapters">
       <factory
             adaptableType="fr.logiprolls.ptcompta.shop.Sale"
-            class="fr.logiprolls.ptcompta.ui.SaleAdapterFactory">
+            class="fr.logiprolls.ptcompta.adapters.SaleAdapterFactory">
          <adapter
                type="fr.logiprolls.ptcompta.shop.Customer">
          </adapter>
