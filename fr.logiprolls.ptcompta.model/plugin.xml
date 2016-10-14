@@ -5,15 +5,16 @@
          point="org.eclipse.emf.ecore.factory_override">
       <factory
             uri="http://www.logiprolls.fr/shop"
-            class="fr.logiprolls.ptcompta.shop.impl.MShopFactoryImpl">
+            class="fr.logiprolls.ptcompta.shop.impl.ShopFactoryImpl">
       </factory>
    </extension>
-   <extension
-         point="org.eclipse.emf.ecore.generated_package">
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated shop -->
       <package
             uri="http://www.logiprolls.fr/shop"
-            class="fr.logiprolls.ptcompta.shop.MShopPackage">
-      </package>
+            class="fr.logiprolls.ptcompta.shop.ShopPackage"
+            genModel="model/shop.genmodel"/>
    </extension>
 
 </plugin>
