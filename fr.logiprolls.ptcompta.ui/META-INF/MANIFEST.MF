@@ -5,6 +5,8 @@ Bundle-SymbolicName: fr.logiprolls.ptcompta.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: fr.logiprolls.ptcompta.ui.UIActivator
 Require-Bundle: fr.logiprolls.ptcompta.model,
+ fr.logiprolls.ptcompta.adapters,
+ org.eclipse.nebula.widgets.nattable.core,
  com.opcoach.e4.preferences,
  org.eclipse.core.runtime,
  org.eclipse.jface,
@@ -16,8 +18,8 @@ Require-Bundle: fr.logiprolls.ptcompta.model,
  org.eclipse.e4.core.di,
  org.eclipse.emf.ecp.ui.view.swt,
  org.eclipse.e4.ui.di,
- org.eclipse.nebula.widgets.nattable.core,
- fr.logiprolls.ptcompta.adapters
+ org.eclipse.emf.edit,
+ fr.logiprolls.ptcompta.model.edit
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: javax.annotation;version="1.0.0";resolution:=optional,
  javax.inject;version="1.0.0"
