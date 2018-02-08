@@ -9,7 +9,7 @@
             <children xsi:type="basic:Part" xmi:id="_QRhOcHX4Eea7YK0YH6QfNw" elementId="fr.logiprolls.ptcompta.app.part.saleslist" contributionURI="bundleclass://fr.logiprolls.ptcompta.ui/fr.logiprolls.ptcompta.ui.parts.SalesListPart" label="Sales List"/>
           </children>
           <children xsi:type="basic:PartStack" xmi:id="_bbAEUHX4Eea7YK0YH6QfNw" elementId="fr.logiprolls.ptcompta.app.partstack.0">
-            <children xsi:type="basic:Part" xmi:id="_cmqmMHX4Eea7YK0YH6QfNw" elementId="fr.logiprolls.ptcompta.app.part.saleinfo" contributionURI="bundleclass://fr.logiprolls.ptcompta.ui/fr.logiprolls.ptcompta.ui.parts.SaleInfoPart" label="Sale Info"/>
+            <children xsi:type="basic:Part" xmi:id="_cmqmMHX4Eea7YK0YH6QfNw" elementId="fr.logiprolls.ptcompta.app.part.saleinfo" toBeRendered="false" visible="false" contributionURI="bundleclass://fr.logiprolls.ptcompta.ui/fr.logiprolls.ptcompta.ui.parts.SaleInfoPart" label="Sale Info"/>
           </children>
         </children>
       </children>

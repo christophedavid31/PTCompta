@@ -28,7 +28,7 @@ import org.osgi.framework.FrameworkUtil;
 import com.opcoach.e4.preferences.ScopedPreferenceStore;
 
 import fr.logiprolls.ptcompta.shop.Shop;
-import fr.logiprolls.ptcompta.shop.impl.ShopImpl;
+import fr.logiprolls.ptcompta.shop.helpers.ShopGenerator;
 import fr.logiprolls.ptcompta.shop.provider.ShopItemProviderAdapterFactory;
 
 public class ShopAddon implements ShopUIConstants {
@@ -43,9 +43,9 @@ public class ShopAddon implements ShopUIConstants {
 	@PostConstruct
 	public void applicationStarted(IEclipseContext context, IExtensionRegistry reg) {
 		//Shop s = ShopFactory.eINSTANCE.createShop();
-		//Shop s = ShopGenerator.createSampleShop();
+		Shop s = ShopGenerator.createSampleShop();
 		
-		Shop s = (ShopImpl) loadShopFromURI(SHOP_MODEL_URI);
+		//Shop s = (ShopImpl) loadShopFromURI(SHOP_MODEL_URI);
 		context.set(Shop.class, s);
 
 		context.set(SHOP_UI_IMG_REGISTRY, getLocalImageRegistry());

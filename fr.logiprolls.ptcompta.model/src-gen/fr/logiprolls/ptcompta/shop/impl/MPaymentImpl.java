@@ -2,11 +2,8 @@
  */
 package fr.logiprolls.ptcompta.shop.impl;
 
-import fr.logiprolls.ptcompta.shop.Payment;
-import fr.logiprolls.ptcompta.shop.Sale;
-import fr.logiprolls.ptcompta.shop.MShopPackage;
-import fr.logiprolls.ptcompta.shop.PaymentType;
 import java.util.Date;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -14,6 +11,12 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+
+import fr.logiprolls.ptcompta.shop.MSale;
+import fr.logiprolls.ptcompta.shop.MShopPackage;
+import fr.logiprolls.ptcompta.shop.Payment;
+import fr.logiprolls.ptcompta.shop.PaymentType;
+import fr.logiprolls.ptcompta.shop.Sale;
 
 
 /**
@@ -187,7 +190,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newSale != null)
-				msgs = ((InternalEObject)newSale).eInverseAdd(this, MShopPackage.SALE__PAYMENTS, Sale.class, msgs);
+				msgs = ((InternalEObject)newSale).eInverseAdd(this, MShopPackage.SALE__PAYMENTS, MSale.class, msgs);
 			msgs = basicSetSale(newSale, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -255,7 +258,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case MShopPackage.PAYMENT__SALE:
-				return eInternalContainer().eInverseRemove(this, MShopPackage.SALE__PAYMENTS, Sale.class, msgs);
+				return eInternalContainer().eInverseRemove(this, MShopPackage.SALE__PAYMENTS, MSale.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

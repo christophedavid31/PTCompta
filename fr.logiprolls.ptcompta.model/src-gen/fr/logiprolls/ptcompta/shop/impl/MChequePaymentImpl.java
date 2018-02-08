@@ -7,6 +7,7 @@ import java.util.Date;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import fr.logiprolls.ptcompta.shop.ChequePayment;
 import fr.logiprolls.ptcompta.shop.MShopPackage;
 

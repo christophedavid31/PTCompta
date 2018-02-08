@@ -3,7 +3,15 @@
 
    <extension
          point="org.eclipse.emf.ecp.view.model.provider.xmi.file">
-<file filePath="viewmodels/Shop.view"/>
+
+
+
+
+
+
+
+
+
 
       <file
             filePath="viewmodels/AccountBook.view">

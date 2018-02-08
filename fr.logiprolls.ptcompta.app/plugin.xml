@@ -16,6 +16,10 @@
                name="applicationCSS"
                value="platform:/plugin/fr.logiprolls.ptcompta.app/css/default.css">
          </property>
+         <property
+               name="appName"
+               value="fr.logiprolls.ptcompta.app">
+         </property>
       </product>
    </extension>
 

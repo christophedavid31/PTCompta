@@ -7,23 +7,36 @@
    </configIni>
 
    <launcherArgs>
-      <programArgs>-clearPersistedState</programArgs>
-      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+      <programArgs>-clearPersistedState
+      </programArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
+      </vmArgsMac>
    </launcherArgs>
 
    <windowImages/>
 
    <plugins>
-      <plugin id="fr.logiprolls.ptcompta.app"/>
       <plugin id="com.ibm.icu"/>
+      <plugin id="com.opcoach.e4.preferences"/>
+      <plugin id="fr.logiprolls.ptcompta.adapters"/>
+      <plugin id="fr.logiprolls.ptcompta.app"/>
+      <plugin id="fr.logiprolls.ptcompta.model"/>
+      <plugin id="fr.logiprolls.ptcompta.model.edit"/>
+      <plugin id="fr.logiprolls.ptcompta.model.editor"/>
+      <plugin id="fr.logiprolls.ptcompta.model.tests"/>
+      <plugin id="fr.logiprolls.ptcompta.ui"/>
+      <plugin id="fr.logiprolls.ptcompta.viewmodel"/>
+      <plugin id="fr.logiprolls.ptcompta.viewmodel.parts"/>
       <plugin id="javax.annotation"/>
       <plugin id="javax.inject"/>
+      <plugin id="javax.servlet"/>
       <plugin id="javax.xml"/>
       <plugin id="org.apache.batik.css"/>
       <plugin id="org.apache.batik.util"/>
       <plugin id="org.apache.batik.util.gui"/>
       <plugin id="org.apache.commons.jxpath"/>
       <plugin id="org.apache.commons.logging"/>
+      <plugin id="org.eclipse.ant.core"/>
       <plugin id="org.eclipse.core.commands"/>
       <plugin id="org.eclipse.core.contenttype"/>
       <plugin id="org.eclipse.core.databinding"/>
@@ -45,6 +58,7 @@
       <plugin id="org.eclipse.core.resources"/>
       <plugin id="org.eclipse.core.resources.win32.x86" fragment="true"/>
       <plugin id="org.eclipse.core.runtime"/>
+      <plugin id="org.eclipse.core.variables"/>
       <plugin id="org.eclipse.e4.core.commands"/>
       <plugin id="org.eclipse.e4.core.contexts"/>
       <plugin id="org.eclipse.e4.core.di"/>
@@ -62,25 +76,109 @@
       <plugin id="org.eclipse.e4.ui.swt.gtk" fragment="true"/>
       <plugin id="org.eclipse.e4.ui.widgets"/>
       <plugin id="org.eclipse.e4.ui.workbench"/>
+      <plugin id="org.eclipse.e4.ui.workbench.addons.swt"/>
       <plugin id="org.eclipse.e4.ui.workbench.renderers.swt"/>
       <plugin id="org.eclipse.e4.ui.workbench.renderers.swt.cocoa" fragment="true"/>
       <plugin id="org.eclipse.e4.ui.workbench.swt"/>
       <plugin id="org.eclipse.e4.ui.workbench3"/>
       <plugin id="org.eclipse.emf.common"/>
+      <plugin id="org.eclipse.emf.common.ui"/>
       <plugin id="org.eclipse.emf.databinding"/>
+      <plugin id="org.eclipse.emf.databinding.edit"/>
       <plugin id="org.eclipse.emf.ecore"/>
       <plugin id="org.eclipse.emf.ecore.change"/>
       <plugin id="org.eclipse.emf.ecore.xmi"/>
+      <plugin id="org.eclipse.emf.ecp.common"/>
+      <plugin id="org.eclipse.emf.ecp.common.ui"/>
+      <plugin id="org.eclipse.emf.ecp.edit"/>
+      <plugin id="org.eclipse.emf.ecp.edit.swt"/>
+      <plugin id="org.eclipse.emf.ecp.ui.view"/>
+      <plugin id="org.eclipse.emf.ecp.ui.view.swt"/>
+      <plugin id="org.eclipse.emf.ecp.view.categorization.model"/>
+      <plugin id="org.eclipse.emf.ecp.view.categorization.swt"/>
+      <plugin id="org.eclipse.emf.ecp.view.context"/>
+      <plugin id="org.eclipse.emf.ecp.view.control.multireference"/>
+      <plugin id="org.eclipse.emf.ecp.view.core.swt"/>
+      <plugin id="org.eclipse.emf.ecp.view.group.model"/>
+      <plugin id="org.eclipse.emf.ecp.view.group.ui.swt"/>
+      <plugin id="org.eclipse.emf.ecp.view.horizontal.model"/>
+      <plugin id="org.eclipse.emf.ecp.view.horizontal.ui.swt"/>
+      <plugin id="org.eclipse.emf.ecp.view.indexdmr.model"/>
+      <plugin id="org.eclipse.emf.ecp.view.mappingdmr.model"/>
+      <plugin id="org.eclipse.emf.ecp.view.migrator"/>
+      <plugin id="org.eclipse.emf.ecp.view.model"/>
+      <plugin id="org.eclipse.emf.ecp.view.model.common"/>
+      <plugin id="org.eclipse.emf.ecp.view.model.provider.xmi"/>
+      <plugin id="org.eclipse.emf.ecp.view.swt.layout"/>
+      <plugin id="org.eclipse.emf.ecp.view.table.model"/>
+      <plugin id="org.eclipse.emf.ecp.view.table.ui.swt"/>
+      <plugin id="org.eclipse.emf.ecp.view.table.validation"/>
+      <plugin id="org.eclipse.emf.ecp.view.template.model"/>
+      <plugin id="org.eclipse.emf.ecp.view.template.service"/>
+      <plugin id="org.eclipse.emf.ecp.view.treemasterdetail.model"/>
+      <plugin id="org.eclipse.emf.ecp.view.treemasterdetail.ui.swt"/>
+      <plugin id="org.eclipse.emf.ecp.view.treemasterdetail.validation"/>
+      <plugin id="org.eclipse.emf.ecp.view.util.swt"/>
+      <plugin id="org.eclipse.emf.ecp.view.validation"/>
+      <plugin id="org.eclipse.emf.ecp.view.vertical.model"/>
+      <plugin id="org.eclipse.emf.ecp.view.vertical.ui.swt"/>
+      <plugin id="org.eclipse.emf.edit"/>
+      <plugin id="org.eclipse.emf.edit.ui"/>
+      <plugin id="org.eclipse.emfforms.common"/>
+      <plugin id="org.eclipse.emfforms.core.services"/>
+      <plugin id="org.eclipse.emfforms.core.services.databinding.featurepath"/>
+      <plugin id="org.eclipse.emfforms.core.services.databinding.index"/>
+      <plugin id="org.eclipse.emfforms.core.services.databinding.mapping"/>
+      <plugin id="org.eclipse.emfforms.core.services.domainexpander.default"/>
+      <plugin id="org.eclipse.emfforms.core.services.domainexpander.index"/>
+      <plugin id="org.eclipse.emfforms.core.services.domainexpander.mapping"/>
+      <plugin id="org.eclipse.emfforms.core.services.domainexpander.table"/>
+      <plugin id="org.eclipse.emfforms.core.services.editsupport"/>
+      <plugin id="org.eclipse.emfforms.core.services.emf"/>
+      <plugin id="org.eclipse.emfforms.core.services.emfspecificservice"/>
+      <plugin id="org.eclipse.emfforms.core.services.legacy"/>
+      <plugin id="org.eclipse.emfforms.core.services.locale.default"/>
+      <plugin id="org.eclipse.emfforms.core.services.mappingprovider.default"/>
+      <plugin id="org.eclipse.emfforms.core.services.mappingprovider.table"/>
+      <plugin id="org.eclipse.emfforms.core.services.structuralchange"/>
+      <plugin id="org.eclipse.emfforms.core.services.structuralchange.default"/>
+      <plugin id="org.eclipse.emfforms.core.services.structuralchange.index"/>
+      <plugin id="org.eclipse.emfforms.core.services.structuralchange.mapping"/>
+      <plugin id="org.eclipse.emfforms.core.services.structuralchange.table"/>
+      <plugin id="org.eclipse.emfforms.localization"/>
+      <plugin id="org.eclipse.emfforms.setup.base"/>
+      <plugin id="org.eclipse.emfforms.swt.control.multiattribute"/>
+      <plugin id="org.eclipse.emfforms.swt.core"/>
+      <plugin id="org.eclipse.emfforms.swt.core.di"/>
+      <plugin id="org.eclipse.emfforms.swt.core.di.extension"/>
+      <plugin id="org.eclipse.emfforms.swt.core.plugin"/>
+      <plugin id="org.eclipse.emfforms.swt.table"/>
+      <plugin id="org.eclipse.emfforms.swt.treemasterdetail"/>
+      <plugin id="org.eclipse.emfforms.view.model.localization"/>
       <plugin id="org.eclipse.equinox.app"/>
+      <plugin id="org.eclipse.equinox.bidi"/>
       <plugin id="org.eclipse.equinox.common"/>
       <plugin id="org.eclipse.equinox.concurrent"/>
       <plugin id="org.eclipse.equinox.ds"/>
       <plugin id="org.eclipse.equinox.event"/>
+      <plugin id="org.eclipse.equinox.p2.core"/>
+      <plugin id="org.eclipse.equinox.p2.engine"/>
+      <plugin id="org.eclipse.equinox.p2.metadata"/>
+      <plugin id="org.eclipse.equinox.p2.metadata.repository"/>
+      <plugin id="org.eclipse.equinox.p2.repository"/>
       <plugin id="org.eclipse.equinox.preferences"/>
+      <plugin id="org.eclipse.equinox.region" fragment="true"/>
       <plugin id="org.eclipse.equinox.registry"/>
+      <plugin id="org.eclipse.equinox.security"/>
+      <plugin id="org.eclipse.equinox.security.macosx" fragment="true"/>
+      <plugin id="org.eclipse.equinox.transforms.hook" fragment="true"/>
       <plugin id="org.eclipse.equinox.util"/>
+      <plugin id="org.eclipse.equinox.weaving.hook" fragment="true"/>
+      <plugin id="org.eclipse.help"/>
       <plugin id="org.eclipse.jface"/>
       <plugin id="org.eclipse.jface.databinding"/>
+      <plugin id="org.eclipse.jface.text"/>
+      <plugin id="org.eclipse.nebula.widgets.nattable.core"/>
       <plugin id="org.eclipse.osgi"/>
       <plugin id="org.eclipse.osgi.compatibility.state" fragment="true"/>
       <plugin id="org.eclipse.osgi.services"/>
@@ -96,6 +194,16 @@
       <plugin id="org.eclipse.swt.gtk.solaris.x86" fragment="true"/>
       <plugin id="org.eclipse.swt.win32.win32.x86" fragment="true"/>
       <plugin id="org.eclipse.swt.win32.win32.x86_64" fragment="true"/>
+      <plugin id="org.eclipse.text"/>
+      <plugin id="org.eclipse.ui"/>
+      <plugin id="org.eclipse.ui.cocoa" fragment="true"/>
+      <plugin id="org.eclipse.ui.forms"/>
+      <plugin id="org.eclipse.ui.ide"/>
+      <plugin id="org.eclipse.ui.views"/>
+      <plugin id="org.eclipse.ui.workbench"/>
+      <plugin id="org.hamcrest.core"/>
+      <plugin id="org.junit"/>
+      <plugin id="org.tukaani.xz"/>
       <plugin id="org.w3c.css.sac"/>
       <plugin id="org.w3c.dom.events"/>
       <plugin id="org.w3c.dom.smil"/>

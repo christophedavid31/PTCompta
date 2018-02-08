@@ -5,7 +5,6 @@ package fr.logiprolls.ptcompta.shop.provider;
 
 import fr.logiprolls.ptcompta.shop.MPayment;
 import fr.logiprolls.ptcompta.shop.MShopPackage;
-
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;

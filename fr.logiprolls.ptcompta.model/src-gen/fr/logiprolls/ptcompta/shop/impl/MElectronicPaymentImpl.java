@@ -3,6 +3,7 @@
 package fr.logiprolls.ptcompta.shop.impl;
 
 import org.eclipse.emf.ecore.EClass;
+
 import fr.logiprolls.ptcompta.shop.ElectronicPayment;
 import fr.logiprolls.ptcompta.shop.MShopPackage;
 

@@ -11,10 +11,12 @@ import javax.inject.Inject;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.di.Persist;
 import org.eclipse.e4.ui.model.application.ui.MDirtyable;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.EContentAdapter;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.nebula.widgets.nattable.NatTable;
@@ -104,12 +106,21 @@ public class SalesListPart {
 	    table = new NatTable(parent, viewportLayer);
 	    
 	    GridDataFactory.fillDefaults().grab(true, true).applyTo(table);
+	    
+		EContentAdapter adapter = new EContentAdapter() {
+			public void notifyChanged(Notification notification) {
+				super.notifyChanged(notification);
+				table.refresh();
+				;
+			}
+		};
+		shop.eAdapters().add(adapter);
 		
 	}
 
 	@Focus
 	public void onFocus() {
-
+	
 	}
 
 //	/**

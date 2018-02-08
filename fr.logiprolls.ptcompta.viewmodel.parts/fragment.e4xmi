@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmi:id="_xaZ7sI4yEeaGh4mGbbdflw">
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_yWeiYI4yEeaGh4mGbbdflw" featurename="children" parentElementId="fr.logiprolls.ptcompta.app.partstack.0" positionInList="">
-    <elements xsi:type="basic:Part" xmi:id="_XjYd4I4zEeaGh4mGbbdflw" elementId="fr.logiprolls.ptcompta.viewmodel.parts.part.shopviewmodel" contributionURI="bundleclass://fr.logiprolls.ptcompta.viewmodel.parts/fr.logiprolls.ptcompta.viewmodel.parts.ShopPart" label="ShopViewModel"/>
+    <elements xsi:type="basic:Part" xmi:id="_XjYd4I4zEeaGh4mGbbdflw" elementId="fr.logiprolls.ptcompta.viewmodel.parts.part.saleviewmodel" contributionURI="bundleclass://fr.logiprolls.ptcompta.viewmodel.parts/fr.logiprolls.ptcompta.viewmodel.parts.SalePart" label="SaleViewModel"/>
+    <elements xsi:type="basic:Part" xmi:id="_L2fZYA0GEeiQDd-iMKuOGg" elementId="fr.logiprolls.ptcompta.viewmodel.parts.part.shopviewmodel" contributionURI="bundleclass://fr.logiprolls.ptcompta.viewmodel.parts/fr.logiprolls.ptcompta.viewmodel.parts.ShopPart" label="ShopViewModel"/>
   </fragments>
 </fragment:ModelFragments>

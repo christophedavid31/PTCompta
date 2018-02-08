@@ -72,8 +72,6 @@ import org.eclipse.ui.part.ISetSelectionTarget;
 import fr.logiprolls.ptcompta.shop.MShopFactory;
 import fr.logiprolls.ptcompta.shop.MShopPackage;
 import fr.logiprolls.ptcompta.shop.provider.ShopEditPlugin;
-
-
 import org.eclipse.core.runtime.Path;
 
 import org.eclipse.jface.viewers.ISelection;

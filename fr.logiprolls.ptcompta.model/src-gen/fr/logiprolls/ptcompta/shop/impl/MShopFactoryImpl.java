@@ -2,7 +2,6 @@
  */
 package fr.logiprolls.ptcompta.shop.impl;
 
-import fr.logiprolls.ptcompta.shop.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -21,6 +20,7 @@ import fr.logiprolls.ptcompta.shop.MSale;
 import fr.logiprolls.ptcompta.shop.MShop;
 import fr.logiprolls.ptcompta.shop.MShopFactory;
 import fr.logiprolls.ptcompta.shop.MShopPackage;
+import fr.logiprolls.ptcompta.shop.PaymentType;
 
 /**
  * <!-- begin-user-doc -->
